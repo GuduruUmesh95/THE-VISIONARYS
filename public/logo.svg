@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+  <defs>
+    <!-- An elegant crescent-shaped blade wrapping from outer to inner radius -->
+    <path id="blade" d="M 50,10 A 40,40 0 0,1 80,50 A 25,25 0 0,0 50,25 A 35,35 0 0,1 50,10 Z" />
+  </defs>
+  
+  <g>
+    <!-- Cyan -->
+    <use href="#blade" fill="#29abe2" transform="rotate(0, 50, 50)" />
+    <!-- Royal Blue -->
+    <use href="#blade" fill="#224096" transform="rotate(45, 50, 50)" />
+    <!-- Purple -->
+    <use href="#blade" fill="#9e1f63" transform="rotate(90, 50, 50)" />
+    <!-- Red/Orange -->
+    <use href="#blade" fill="#f15a24" transform="rotate(135, 50, 50)" />
+    <!-- Orange -->
+    <use href="#blade" fill="#f7931e" transform="rotate(180, 50, 50)" />
+    <!-- Yellow -->
+    <use href="#blade" fill="#fcee21" transform="rotate(225, 50, 50)" />
+    <!-- Green -->
+    <use href="#blade" fill="#39b54a" transform="rotate(270, 50, 50)" />
+    <!-- Teal -->
+    <use href="#blade" fill="#00a99d" transform="rotate(315, 50, 50)" />
+  </g>
+</svg>
