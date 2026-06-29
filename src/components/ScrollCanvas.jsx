@@ -76,7 +76,7 @@ export default function ScrollCanvas({ scrollProgressRef }) {
 
       // Lerp scrub transition to prevent jerky jumps
       const targetFrame = 1 + (scrollProgressRef.current * (totalFrames - 1));
-      currentFrameRef.current += (targetFrame - currentFrameRef.current) * 0.08;
+      currentFrameRef.current += (targetFrame - currentFrameRef.current) * 0.06;
 
       // Draw the current frame
       const frameIndex = Math.max(1, Math.min(totalFrames, Math.floor(currentFrameRef.current)));
@@ -106,7 +106,14 @@ export default function ScrollCanvas({ scrollProgressRef }) {
           drawY = 0;
         }
 
-        ctx.drawImage(img, drawX, drawY, drawWidth, drawHeight);
+        // Apply a scale factor of 0.85 so the cube structure doesn't dominate page text
+        const scaleFactor = 0.85;
+        const finalWidth = drawWidth * scaleFactor;
+        const finalHeight = drawHeight * scaleFactor;
+        const finalX = drawX + (drawWidth - finalWidth) / 2;
+        const finalY = drawY + (drawHeight - finalHeight) / 2;
+
+        ctx.drawImage(img, finalX, finalY, finalWidth, finalHeight);
       }
 
       // 3. Subtle pulsing gold circuit glow overlay (active as user reaches 'Our Clients')
@@ -143,35 +150,21 @@ export default function ScrollCanvas({ scrollProgressRef }) {
     };
   }, [isLoaded, images, scrollProgressRef]);
 
-  // Loading Screen Overlay
-  if (!isLoaded) {
-    return (
-      <div className="fixed inset-0 w-full h-full bg-[#0a0a0c] z-50 flex flex-col items-center justify-center pointer-events-auto">
-        <div className="flex flex-col items-center max-w-xs w-full px-6">
-          <img 
-            src="/logo-transparent-png-mp8qVyLKkzCpX33v.avif" 
-            alt="The Visionarys Logo" 
-            className="w-16 h-16 object-contain mb-8 animate-pulse"
-          />
-          <div className="w-full bg-white/5 h-[2px] rounded-full overflow-hidden mb-3">
-            <div 
-              className="bg-accent-glow h-full transition-all duration-300 ease-out"
-              style={{ width: `${loadingProgress}%` }}
-            />
-          </div>
-          <span className="text-[10px] font-mono tracking-[0.2em] text-secondary uppercase">
-            Initializing Core // {loadingProgress}%
-          </span>
-        </div>
-      </div>
-    );
-  }
+
 
   return (
     <canvas
       ref={canvasRef}
-      className="w-full h-full block"
+      className="fixed top-0 left-0 w-screen h-screen block pointer-events-none"
       style={{
+        position: "fixed",
+        top: 0,
+        left: 0,
+        width: "100vw",
+        height: "100vh",
+        zIndex: 1,
+        pointerEvents: "none",
+        objectFit: "cover",
         imageRendering: "-webkit-optimize-contrast",
       }}
     />

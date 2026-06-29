@@ -6,6 +6,7 @@ export default function CertificationsBento() {
       id: "gdpr",
       name: "GDPR Compliant",
       gridClass: "md:col-span-2 lg:col-span-2",
+      href: "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/",
       badge: (
         <div className="relative w-20 h-20 flex items-center justify-center">
           <img
@@ -21,6 +22,7 @@ export default function CertificationsBento() {
       id: "cyber",
       name: "Cyber Essentials Certified",
       gridClass: "md:col-span-1 lg:col-span-1",
+      href: "https://www.ncsc.gov.uk/cyberessentials/overview",
       badge: (
         <div className="relative w-20 h-20 flex items-center justify-center">
           <img
@@ -36,6 +38,7 @@ export default function CertificationsBento() {
       id: "cyberplus",
       name: "Cyber Essentials Plus Certified",
       gridClass: "md:col-span-1 lg:col-span-1",
+      href: "https://www.ncsc.gov.uk/cyberessentials/overview",
       badge: (
         <div className="relative w-20 h-20 flex items-center justify-center">
           <img
@@ -51,6 +54,7 @@ export default function CertificationsBento() {
       id: "ico",
       name: "ICO Registered",
       gridClass: "md:col-span-1 lg:col-span-1",
+      href: "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/",
       badge: (
         <svg className="w-20 h-20" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
           <rect x="8" y="24" width="84" height="52" rx="6" fill="#005B82" stroke="#ffffff" strokeWidth="1" />
@@ -64,6 +68,7 @@ export default function CertificationsBento() {
       id: "mrs",
       name: "MRS Member 2026",
       gridClass: "md:col-span-1 lg:col-span-1",
+      href: "https://www.mrs.org.uk/",
       badge: (
         <svg className="w-20 h-20" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
           <circle cx="50" cy="50" r="44" fill="#121214" stroke="#ffffff" strokeWidth="2" />
@@ -79,19 +84,19 @@ export default function CertificationsBento() {
 
   return (
     <section id="services" className="w-full py-24 md:py-36 bg-transparent border-t border-white/5 relative z-10">
-      <div className="max-w-[1280px] mx-auto px-6 md:px-12">
+      <div className="max-w-[85vw] xl:max-w-[80vw] mx-auto px-4">
         
         {/* Section Header */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-16 pb-6 border-b border-white/5">
           <div>
-            <span className="text-[10px] font-mono tracking-[0.3em] text-accent-glow uppercase block mb-3">
+            <span className="text-[10px] font-mono tracking-[0.3em] uppercase block mb-3 font-bold text-[#FFB84D]">
               Regulatory Compliance
             </span>
-            <h2 className="text-3xl md:text-5xl font-display font-bold text-white tracking-tight leading-[1.1]">
+            <h2 className="text-3xl md:text-5xl font-sans font-bold text-[#FDFBF7] opacity-100 tracking-tight leading-[1.1] text-shadow-premium">
               Certifications & Frameworks
             </h2>
           </div>
-          <p className="text-xs font-mono tracking-widest text-accent-light uppercase">
+          <p className="text-xs font-mono tracking-widest uppercase font-bold text-[#FFB84D]">
             INTEGRITY-CONTROLLED PARTNER NETWORKS
           </p>
         </div>
@@ -99,35 +104,28 @@ export default function CertificationsBento() {
         {/* Bento Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {certifications.map((cert) => (
-            <div 
+            <a 
               key={cert.id}
-              className={`${cert.gridClass} group relative rounded-3xl p-[1px] overflow-hidden transition-all duration-500`}
+              href={cert.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`${cert.gridClass} group relative rounded-3xl overflow-hidden border border-white/5 bg-[#0a0a0c]/60 backdrop-blur-sm transition-all duration-300 ease-out hover:border-[#FFB84D]/40 hover:shadow-[0_0_20px_rgba(255,184,77,0.08)] hover:scale-[1.02] p-8 flex flex-col items-center justify-between text-center min-h-[260px] block pointer-events-auto`}
             >
-              {/* Subtle inner glow/gradient on hover */}
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 bg-gradient-to-tr from-accent-glow/10 via-transparent to-accent-light/10" />
-              <div className="absolute inset-0 bg-white/[0.06] group-hover:opacity-0 transition-opacity duration-500 rounded-3xl" />
-
-              {/* Card Body */}
-              <div className="relative h-full w-full bg-[#0d0e12]/98 backdrop-blur-xl rounded-[23px] p-8 flex flex-col items-center justify-between text-center min-h-[260px]">
-                
-                {/* Badge Visual */}
-                <div className="transform group-hover:scale-105 transition-transform duration-500 mb-4">
-                  {cert.badge}
-                </div>
-
-                {/* Badge Info */}
-                <div>
-                  <h3 className="text-base font-display font-bold text-white mb-2 group-hover:text-accent-light transition-colors duration-300">
-                    {cert.name}
-                  </h3>
-                  <p className="text-secondary text-xs leading-relaxed max-w-sm mx-auto">
-                    {cert.description}
-                  </p>
-                </div>
-
-                <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+              {/* Badge Visual */}
+              <div className="transform group-hover:scale-105 transition-transform duration-500 mb-4">
+                {cert.badge}
               </div>
-            </div>
+
+              {/* Badge Info */}
+              <div>
+                <h3 className="text-base font-sans font-bold text-[#FDFBF7] opacity-100 group-hover:text-[#FFB84D] transition-colors duration-300 mb-2 tracking-tight">
+                  {cert.name}
+                </h3>
+                <p className="text-zinc-400 font-normal text-xs leading-relaxed max-w-sm mx-auto">
+                  {cert.description}
+                </p>
+              </div>
+            </a>
           ))}
         </div>
 

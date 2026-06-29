@@ -14,28 +14,43 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="w-full bg-transparent border-t border-white/5 pt-20 pb-12 relative z-10 text-secondary">
+    <footer className="w-full bg-transparent border-t-[0.5px] border-white/[0.06] pt-20 pb-12 relative z-10 text-secondary">
       {/* Subtle overlay lines */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.01)_1px,transparent_1px)] bg-[size:100%_40px] pointer-events-none" />
 
-      <div className="max-w-[1280px] mx-auto px-6 md:px-12 relative z-10">
+      <div className="w-full px-6 md:px-12 lg:px-16 relative z-10">
         
         {/* Main grid */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 pb-12 border-b border-white/5">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 pb-12 border-b-[0.5px] border-white/[0.06]">
           
           {/* Brand Col */}
           <div className="md:col-span-6 space-y-6">
-            <a href="#home" className="flex items-center gap-3">
+            <a 
+              href="#home" 
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById("home")?.scrollIntoView({ behavior: "smooth" });
+              }}
+              className="flex items-center gap-3 group"
+            >
               <img 
-                src="/logo-transparent-png-mp8qVyLKkzCpX33v.avif" 
+                src="/logo-new.png" 
                 alt="The Visionarys Logo" 
-                className="w-8 h-8 object-contain"
+                className="w-10 h-10 object-contain group-hover:scale-[1.03] transition-transform duration-300"
               />
-              <span className="text-white font-display font-bold tracking-[0.25em] text-sm uppercase">
-                THE VISIONARYS
-              </span>
+              <div className="flex flex-col text-left">
+                <span 
+                  className="text-white font-display font-extrabold tracking-[0.2em] text-sm uppercase leading-none text-shadow-premium"
+                  style={{ color: "#ffffff" }}
+                >
+                  THE VISIONARYS
+                </span>
+                <span className="text-zinc-400 font-mono text-[8px] tracking-[0.12em] mt-1 font-bold">
+                  ENVISION. INNOVATE. ACHIEVE.
+                </span>
+              </div>
             </a>
-            <p className="text-xs text-secondary leading-relaxed max-w-md">
+            <p className="text-xs text-zinc-400 font-normal leading-relaxed max-w-md">
               We specialize in delivering end-to-end consulting and implementation services across industries, helping organizations tackle complex challenges like digital transformation, compliance, and risk management. Our expertise lies in bridging the gap between business needs and technical solutions, ensuring seamless integration and adoption of cutting-edge tools that drive measurable results.
             </p>
           </div>
@@ -50,7 +65,14 @@ export default function Footer() {
                 <li key={link.label}>
                   <a 
                     href={link.href} 
-                    className="hover:text-accent-light transition-colors duration-200"
+                    onClick={(e) => {
+                      if (link.href.startsWith("#")) {
+                        e.preventDefault();
+                        const targetId = link.href === "#home" ? "home" : link.href.substring(1);
+                        document.getElementById(targetId)?.scrollIntoView({ behavior: "smooth" });
+                      }
+                    }}
+                    className="hover:text-white transition-colors duration-200"
                   >
                     {link.label}
                   </a>
@@ -68,7 +90,7 @@ export default function Footer() {
               <p className="text-white font-medium">The Visionarys Ltd</p>
               <p>Registered Office: London, United Kingdom</p>
               <p className="pt-2">
-                <span className="text-accent-glow font-mono text-[10px] block">DIRECT LINK</span>
+                <span className="text-white/85 font-mono text-[10px] block">DIRECT LINK</span>
                 <a href="https://wa.me/16464663838" target="_blank" rel="noopener noreferrer" className="hover:underline text-white font-mono">+1 646 466 3838 (WhatsApp)</a>
               </p>
             </div>
@@ -89,7 +111,7 @@ export default function Footer() {
               href="https://www.facebook.com/profile.php?id=61561084091979" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="hover:text-accent-light transition-colors duration-300"
+              className="hover:text-white transition-colors duration-300"
               aria-label="Facebook"
             >
               <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -100,7 +122,7 @@ export default function Footer() {
               href="https://www.instagram.com/thevisionarys.uk?igsh=enpmcDJ0a24wamUw&utm_source=qr" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="hover:text-accent-light transition-colors duration-300"
+              className="hover:text-white transition-colors duration-300"
               aria-label="Instagram"
             >
               <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" xmlns="http://www.w3.org/2000/svg">
@@ -113,7 +135,7 @@ export default function Footer() {
               href="https://www.linkedin.com/company/103359779/" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="hover:text-accent-light transition-colors duration-300"
+              className="hover:text-white transition-colors duration-300"
               aria-label="LinkedIn"
             >
               <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">

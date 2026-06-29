@@ -12,26 +12,26 @@ export default function Perspective() {
         }}
       />
 
-      <div className="max-w-[1280px] mx-auto px-6 md:px-12 relative z-10">
+      <div className="max-w-[85vw] xl:max-w-[80vw] mx-auto px-4 relative z-10">
         
         {/* Section Header */}
         <div className="max-w-4xl mb-16 md:mb-20">
           <div className="flex items-center gap-3 mb-6">
-            <span className="text-[10px] font-mono tracking-[0.25em] text-accent-glow uppercase">
+            <span className="text-[10px] font-mono tracking-[0.25em] uppercase font-bold text-[#FFB84D]">
               Firm Perspective
             </span>
-            <div className="w-12 h-[1px] bg-gradient-to-r from-accent-glow/40 to-transparent" />
+            <div className="w-12 h-[1px] bg-gradient-to-r from-[#FFB84D]/40 to-transparent" />
           </div>
           
-          <h2 className="text-3xl md:text-5xl font-display font-bold tracking-tight leading-[1.15] text-white">
+          <h2 className="text-3xl md:text-5xl font-sans font-bold tracking-tight leading-[1.15] text-[#FDFBF7] opacity-100 text-shadow-premium">
             Empowering Tomorrow: <br />
-            <span className="bg-gradient-to-r from-white to-[#8e96a8] bg-clip-text text-transparent">Innovative Solutions</span> <br />
+            Innovative Solutions <br />
             for a Modern World.
           </h2>
         </div>
 
         {/* Content columns */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 text-secondary max-w-5xl relative">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 text-zinc-400 max-w-5xl relative">
           
           {/* Vertical divider line */}
           <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-[1px] bg-gradient-to-b from-white/10 via-white/5 to-transparent -translate-x-1/2" />
@@ -53,8 +53,8 @@ export default function Perspective() {
             </p>
             
             <a 
-              href="#solutions" 
-              className="inline-flex items-center gap-2 text-xs font-mono font-bold tracking-wider text-accent-light hover:text-accent-glow transition-colors duration-300 mt-8 group self-start"
+              href="https://www.thevisionarys.com/solutions" 
+              className="inline-flex items-center gap-2 text-xs font-mono font-bold tracking-wider text-white group-hover:text-zinc-300 transition-colors duration-300 mt-8 group self-start pointer-events-auto"
             >
               EXPLORE OUR CAPABILITIES
               <span className="inline-block transform group-hover:translate-x-1.5 transition-transform duration-300">→</span>
