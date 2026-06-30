@@ -4,37 +4,52 @@ import { gsap } from "gsap";
 
 export default function HeroSection() {
   useEffect(() => {
-    // STAGE 1: 0.0s - 1.0s: All elements are invisible
-    gsap.set(".hero-headline-badge", { opacity: 0, filter: "blur(12px)" });
-    gsap.set(".hero-headline-title", { x: "-100vw", opacity: 0 }); // completely outside the left edge
-    gsap.set(".hero-subhead-text", { x: "100vw", opacity: 0 }); // completely outside the right edge
+    // STAGE 1: Initial invisible states with specific directions
+    gsap.set(".hero-headline-badge", { y: -20, opacity: 0, filter: "blur(6px)" }); // badge from top
+    gsap.set(".hero-headline-title-text", { x: -40, opacity: 0 }); // title reveal from left
+    gsap.set(".hero-sub-point", { y: 20, opacity: 0 }); // 3 sub points from bottom
+    gsap.set(".hero-subhead-text", { x: 40, opacity: 0 }); // description from right
 
-    // STAGE 2: Starts at 1.0s - QUICKENED BLOOM ACCENT REVEAL
+    // STAGE 2: Starts at 0.8s
+    // Text 1 (Badge): fades in, slides down from top, and clears blur smoothly
     gsap.to(".hero-headline-badge", { 
+      y: 0,
       opacity: 1, 
       filter: "blur(0px)", 
       duration: 1.2, 
       ease: "power2.out",
-      delay: 1.0 
+      delay: 0.8 
     });
 
-    // STAGE 3: Starts at 1.5s - ASYMMETRIC TEXT ENTRY SLIDE
-    // Left Headline: slides in slowly over 2.0s
-    gsap.to(".hero-headline-title", { 
+    // STAGE 3: Starts at 1.3s
+    // Text 2 (Title): slides in from left to right (revealing effect)
+    gsap.to(".hero-headline-title-text", { 
       x: 0, 
       opacity: 1, 
-      duration: 2.0, 
+      duration: 1.4, 
       ease: "power3.out",
-      delay: 1.5 
+      delay: 1.3 
     });
 
-    // Right summary: slides in slowly from right over 3.0s
+    // STAGE 4: Starts at 1.8s
+    // Text 3 (Sub points): slide up from bottom staggered one after another
+    gsap.to(".hero-sub-point", { 
+      y: 0, 
+      opacity: 1, 
+      duration: 0.8, 
+      stagger: 0.25,
+      ease: "power2.out",
+      delay: 1.8 
+    });
+
+    // STAGE 5: Starts at 2.2s
+    // Text 4 (Description): slides in from right to left
     gsap.to(".hero-subhead-text", { 
       x: 0, 
       opacity: 1, 
-      duration: 3.0, 
+      duration: 1.4, 
       ease: "power3.out",
-      delay: 1.5 
+      delay: 2.2 
     });
   }, []);
 
@@ -43,24 +58,44 @@ export default function HeroSection() {
 
       {/* 2. Main Asymmetric Hero Content Stack (aligned to re-centered column) */}
       <div className="w-full flex-grow flex items-center justify-center">
-        <div className="max-w-[85vw] xl:max-w-[80vw] mx-auto px-4 w-full flex flex-col lg:flex-row items-center lg:items-center justify-between gap-12 mt-20 md:mt-24 lg:mt-0">
+        <div className="max-w-[85vw] xl:max-w-[80vw] mx-auto px-4 w-full flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 lg:gap-12 mt-20 lg:mt-0">
           
           {/* Headline (class: hero-headline) */}
-          <div className="hero-headline w-full lg:w-[60%] text-left pointer-events-auto transition-transform duration-300">
-            <span className="hero-headline-badge inline-block text-[10px] font-mono tracking-[0.3em] text-[#FFB84D] border border-[#FFB84D]/20 bg-[#FFB84D]/5 px-4 py-1.5 rounded-sm mb-6 uppercase font-bold">
+          <div className="hero-headline w-full lg:w-[65%] text-left pointer-events-auto transition-transform duration-300">
+            <span className="hero-headline-badge inline-block text-[9px] md:text-[10px] font-display tracking-[0.25em] text-[#ffae5c] border border-[#ffae5c]/20 bg-[#ffae5c]/5 px-5 py-1.5 rounded-sm mb-6 uppercase font-semibold text-shadow-premium">
               Consulting & Deep Tech Integration
             </span>
-            <h1 className="hero-headline-title text-4xl md:text-5xl lg:text-6xl font-sans font-bold text-[#FDFBF7] opacity-100 tracking-tight leading-[1.1] text-shadow-premium drop-shadow-[0_4px_16px_rgba(0,0,0,0.95)]">
-              Transforming <br className="hidden md:inline" />
-              Businesses with <br />
-              AI & Digital Innovation.
-            </h1>
+            
+            <div className="hero-headline-title space-y-4">
+              <h1 className="hero-headline-title-text text-2xl md:text-3xl lg:text-4xl font-display font-extrabold tracking-tight leading-[1.1] text-white text-shadow-premium drop-shadow-[0_4px_16px_rgba(0,0,0,0.95)]">
+                Transforming <br className="md:hidden" />
+                <span className="inline-block bg-gradient-to-b from-[#FFE082] via-[#FFB300] to-[#FF6D00] bg-clip-text text-transparent" style={{ textShadow: "none" }}>Business</span> with
+              </h1>
+              <div className="flex flex-col gap-3 text-xs md:text-sm font-mono mt-5 tracking-[0.12em] text-white/90">
+                {/* Row 1: AI Consulting and Digital Innovation */}
+                <div className="flex flex-wrap gap-x-6 gap-y-2">
+                  <div className="hero-sub-point flex items-center gap-2">
+                    <span className="inline-block bg-gradient-to-b from-[#FFE082] via-[#FFB300] to-[#FF6D00] bg-clip-text text-transparent font-bold" style={{ textShadow: "none" }}>✦</span>
+                    <span>AI CONSULTING</span>
+                  </div>
+                  <div className="hero-sub-point flex items-center gap-2">
+                    <span className="inline-block bg-gradient-to-b from-[#FFE082] via-[#FFB300] to-[#FF6D00] bg-clip-text text-transparent font-bold" style={{ textShadow: "none" }}>✦</span>
+                    <span>DIGITAL INNOVATION</span>
+                  </div>
+                </div>
+                {/* Row 2: Deep Tech Integration */}
+                <div className="hero-sub-point flex items-center gap-2">
+                  <span className="inline-block bg-gradient-to-b from-[#FFE082] via-[#FFB300] to-[#FF6D00] bg-clip-text text-transparent font-bold" style={{ textShadow: "none" }}>✦</span>
+                  <span>DEEP TECH INTEGRATION</span>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Subhead (class: hero-subhead) */}
           <div className="hero-subhead w-full lg:w-[35%] flex justify-start lg:justify-end pointer-events-auto transition-transform duration-300">
             <div className="hero-subhead-text max-w-md lg:text-right border-l-2 lg:border-l-0 lg:border-r-2 border-white/10 pl-6 lg:pl-0 lg:pr-6 py-2">
-              <p className="text-zinc-400 font-normal text-sm md:text-base leading-relaxed font-sans text-shadow-premium">
+              <p className="text-secondary font-normal text-sm md:text-base leading-loose font-sans text-shadow-premium">
                 AI consulting, DevOps, Cybersecurity and Digital Transformation for Enterprises and Financial Institutions.
               </p>
             </div>
@@ -84,7 +119,7 @@ export default function HeroSection() {
           </h2>
           <div className="w-20 h-[1.5px] bg-white/20 my-8 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]" />
           <p 
-            className="text-sm md:text-lg max-w-2xl leading-relaxed text-zinc-400 font-normal text-shadow-premium drop-shadow-[0_2px_8px_rgba(0,0,0,0.98)]"
+            className="text-sm md:text-lg max-w-2xl leading-relaxed text-[#8e96a8] font-normal text-shadow-premium drop-shadow-[0_2px_8px_rgba(0,0,0,0.98)]"
           >
             Bridging the gap between complex business challenges and cutting-edge technical execution.
           </p>
@@ -92,29 +127,16 @@ export default function HeroSection() {
       </div>
 
       {/* 4. Footer Overlay (class: hero-footer, full-width) */}
-      <div className="w-full pb-4 md:pb-8">
-        <footer className="hero-footer w-full px-6 md:px-12 lg:px-16 flex flex-col md:flex-row items-center justify-between gap-6 pointer-events-auto transition-opacity duration-300">
-          {/* Status Line */}
-          <div className="flex items-center gap-3">
-            <span className="w-1.5 h-1.5 bg-[#25D366] rounded-full animate-ping" />
-            <span className="text-[9px] font-mono tracking-[0.2em] text-zinc-400">
-              SYSTEM STATE: <span className="text-white font-bold">ACTIVE</span> // ID: <span className="text-white/90">2026_VISION</span>
-            </span>
-          </div>
-
+      <div className="w-full pb-0 mb-[-12px]">
+        <footer className="hero-footer w-full flex justify-center pointer-events-auto transition-opacity duration-300">
           {/* Scroll Indicator */}
           <div className="flex flex-col items-center gap-2">
-            <span className="text-[9px] font-mono uppercase tracking-[0.25em] text-zinc-400">
+            <span className="text-[9px] font-mono uppercase tracking-[0.25em] text-[#8e96a8]">
               Scroll to Explore
             </span>
             <div className="flex items-center justify-center w-8 h-8 rounded-full border-[0.5px] border-white/[0.06] bg-white/[0.02] text-white animate-bounce">
               <ArrowDown className="w-4 h-4" />
             </div>
-          </div>
-
-          {/* Location Stamp */}
-          <div className="text-[9px] font-mono tracking-[0.2em] text-zinc-400">
-            LONDON // UK — 2026
           </div>
         </footer>
       </div>

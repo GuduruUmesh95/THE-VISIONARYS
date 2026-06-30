@@ -9,40 +9,58 @@ export default function ScrollCanvas({ scrollProgressRef }) {
 
   const totalFrames = 96;
 
-  // 1. Preload all JPEG frames into browser memory cache
+  const [firstImage, setFirstImage] = useState(null);
+
+  // 1. Preload all JPEG frames into browser memory cache, prioritizing the first frame
   useEffect(() => {
     let loadedCount = 0;
     const loadedImages = [];
     let isMounted = true;
 
-    for (let i = 1; i <= totalFrames; i++) {
-      const img = new Image();
-      const frameNum = String(i).padStart(3, "0");
-      img.src = `/assets/ai-core/frame-${frameNum}.jpg`;
-      
-      img.onload = () => {
-        if (!isMounted) return;
-        loadedCount++;
-        setLoadingProgress(Math.round((loadedCount / totalFrames) * 100));
+    // Load first frame immediately for instant drawing
+    const firstImg = new Image();
+    firstImg.src = "/assets/ai-core/frame-001.jpg";
+    firstImg.onload = () => {
+      if (!isMounted) return;
+      setFirstImage(firstImg);
+      // Start preloading the remaining frames
+      preloadRemaining();
+    };
+    firstImg.onerror = () => {
+      if (!isMounted) return;
+      preloadRemaining();
+    };
+
+    function preloadRemaining() {
+      for (let i = 1; i <= totalFrames; i++) {
+        const img = new Image();
+        const frameNum = String(i).padStart(3, "0");
+        img.src = `/assets/ai-core/frame-${frameNum}.jpg`;
         
-        if (loadedCount === totalFrames) {
-          // Sort to ensure the array elements match their correct sequence index
-          loadedImages.sort((a, b) => a.index - b.index);
-          setImages(loadedImages.map(item => item.img));
-          setIsLoaded(true);
-        }
-      };
+        img.onload = () => {
+          if (!isMounted) return;
+          loadedCount++;
+          setLoadingProgress(Math.round((loadedCount / totalFrames) * 100));
+          
+          if (loadedCount === totalFrames) {
+            // Sort to ensure the array elements match their correct sequence index
+            loadedImages.sort((a, b) => a.index - b.index);
+            setImages(loadedImages.map(item => item.img));
+            setIsLoaded(true);
+          }
+        };
 
-      img.onerror = () => {
-        console.error(`Failed to load frame-${frameNum}.jpg`);
-        if (!isMounted) return;
-        loadedCount++;
-        if (loadedCount === totalFrames) {
-          setIsLoaded(true);
-        }
-      };
+        img.onerror = () => {
+          console.error(`Failed to load frame-${frameNum}.jpg`);
+          if (!isMounted) return;
+          loadedCount++;
+          if (loadedCount === totalFrames) {
+            setIsLoaded(true);
+          }
+        };
 
-      loadedImages.push({ index: i, img });
+        loadedImages.push({ index: i, img });
+      }
     }
 
     return () => {
@@ -52,7 +70,7 @@ export default function ScrollCanvas({ scrollProgressRef }) {
 
   // 2. High-performance requestAnimationFrame render loop with DPR scaling & lerp
   useEffect(() => {
-    if (!isLoaded || images.length === 0) return;
+    if (!firstImage && images.length === 0) return;
 
     let animId;
     const canvas = canvasRef.current;
@@ -78,9 +96,9 @@ export default function ScrollCanvas({ scrollProgressRef }) {
       const targetFrame = 1 + (scrollProgressRef.current * (totalFrames - 1));
       currentFrameRef.current += (targetFrame - currentFrameRef.current) * 0.06;
 
-      // Draw the current frame
+      // Draw the current frame, fall back to firstImage if sequence is not loaded
       const frameIndex = Math.max(1, Math.min(totalFrames, Math.floor(currentFrameRef.current)));
-      const img = images[frameIndex - 1];
+      const img = images[frameIndex - 1] || firstImage;
 
       if (img) {
         const canvasWidth = rect.width;
@@ -148,7 +166,7 @@ export default function ScrollCanvas({ scrollProgressRef }) {
     return () => {
       cancelAnimationFrame(animId);
     };
-  }, [isLoaded, images, scrollProgressRef]);
+  }, [firstImage, isLoaded, images, scrollProgressRef]);
 
 
 

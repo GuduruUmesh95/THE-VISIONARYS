@@ -23,12 +23,12 @@ export default function App() {
   const entranceTimerRef = useRef(null);
 
   useEffect(() => {
-    // STAGE 1: 0.0s - 1.0s: Contrast mask starts hidden, Navbar is persistent at 1.0 opacity from mount
+    // STAGE 1: Contrast mask starts hidden, Navbar is persistent at 1.0 opacity
     gsap.set(".bg-contrast-mask", { opacity: 0 });
     gsap.set(".hero-nav-global", { y: 0, opacity: 1.0 });
 
-    // STAGE 4: Starts at 4.0s - THE VEIL GRADIENT FADE (2.0s duration)
-    gsap.to(".bg-contrast-mask", { opacity: 1, duration: 2.0, ease: "power1.inOut", delay: 4.0 });
+    // THE VEIL GRADIENT FADE (Starts immediately, completes in 1.5s)
+    gsap.to(".bg-contrast-mask", { opacity: 1, duration: 1.5, ease: "power1.inOut" });
 
     const handleScrollHandoff = () => {
       if (window.scrollY > 0) {
@@ -43,23 +43,25 @@ export default function App() {
       // Kill active entry animations to prevent clashes
       gsap.killTweensOf(".bg-contrast-mask");
       gsap.killTweensOf(".hero-headline-badge");
-      gsap.killTweensOf(".hero-headline-title");
+      gsap.killTweensOf(".hero-headline-title-text");
+      gsap.killTweensOf(".hero-sub-point");
       gsap.killTweensOf(".hero-subhead-text");
 
       // Force snap instantly to 100% completed stable design state
       gsap.set(".bg-contrast-mask", { opacity: 1 });
-      gsap.set(".hero-headline-badge", { opacity: 1, filter: "blur(0px)", visibility: "visible" });
-      gsap.set(".hero-headline-title", { x: 0, opacity: 1, visibility: "visible" });
-      gsap.set(".hero-subhead-text", { x: 0, opacity: 1, visibility: "visible" });
+      gsap.set(".hero-headline-badge", { x: 0, y: 0, opacity: 1, filter: "blur(0px)", visibility: "visible" });
+      gsap.set(".hero-headline-title-text", { x: 0, y: 0, opacity: 1, visibility: "visible" });
+      gsap.set(".hero-sub-point", { x: 0, y: 0, opacity: 1, visibility: "visible" });
+      gsap.set(".hero-subhead-text", { x: 0, y: 0, opacity: 1, visibility: "visible" });
       
       setEntranceCompleted(true);
       window.removeEventListener("scroll", handleScrollHandoff);
     };
 
-    // Delay ScrollTrigger initialization until all stages complete (6.0 seconds)
+    // Delay ScrollTrigger initialization until all stages complete (4.0 seconds)
     entranceTimerRef.current = setTimeout(() => {
       triggerHandoff();
-    }, 6000);
+    }, 4000);
 
     window.addEventListener("scroll", handleScrollHandoff);
 
