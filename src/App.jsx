@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import ScrollCanvas from "./components/ScrollCanvas";
 import Navbar from "./components/Navbar";
 import HeroSection from "./components/HeroSection";
-import ClientsMarquee from "./components/ClientsMarquee";
+import ClientsSplit from "./components/ClientsSplit";
 import SolutionsBento from "./components/SolutionsBento";
 import RecognitionBento from "./components/RecognitionBento";
 import Perspective from "./components/Perspective";
@@ -177,7 +177,7 @@ export default function App() {
 
           {/* 3. Clients/Trust Marquee */}
           <div id="careers">
-            <ClientsMarquee />
+            <ClientsSplit />
           </div>
 
           {/* 4. Certifications and compliance frameworks */}
