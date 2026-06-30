@@ -69,7 +69,7 @@ export default function HeroSection() {
             <div className="hero-headline-title space-y-4">
               <h1 className="hero-headline-title-text text-2xl md:text-3xl lg:text-4xl font-display font-extrabold tracking-tight leading-[1.1] text-white text-shadow-premium drop-shadow-[0_4px_16px_rgba(0,0,0,0.95)]">
                 Transforming <br className="md:hidden" />
-                <span className="inline-block bg-gradient-to-b from-[#FFE082] via-[#FFB300] to-[#FF6D00] bg-clip-text text-transparent" style={{ textShadow: "none" }}>Business</span> with
+                <span className="inline-block bg-gradient-to-b from-[#FFE082] via-[#FFB300] to-[#FF6D00] bg-clip-text text-transparent" style={{ textShadow: "none" }}>Business</span>
               </h1>
               <div className="flex flex-col gap-3 text-xs md:text-sm font-mono mt-5 tracking-[0.12em] text-white/90">
                 {/* Row 1: AI Consulting and Digital Innovation */}
