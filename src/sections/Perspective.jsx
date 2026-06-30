@@ -37,20 +37,22 @@ export default function Perspective() {
           <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-[1px] bg-gradient-to-b from-white/10 via-white/5 to-transparent -translate-x-1/2" />
 
           {/* Left Column */}
-          <div className="space-y-6 md:pr-8">
-            <p className="text-sm md:text-base leading-relaxed hover:text-white transition-colors duration-300">
+          <div className="space-y-8 md:pr-10">
+            <p className="text-base md:text-lg leading-loose text-zinc-300 hover:text-white transition-colors duration-300 first-letter:text-6xl first-letter:font-display first-letter:font-bold first-letter:text-[#FFE082] first-letter:mr-4 first-letter:float-left first-letter:leading-[0.8] first-letter:mt-2">
               We specialize in delivering end-to-end consulting and implementation services across industries, helping organizations tackle complex challenges like digital transformation, compliance, and risk management. Our expertise lies in bridging the gap between business needs and technical solutions, ensuring seamless integration and adoption of cutting-edge tools that drive measurable results.
             </p>
-            <p className="text-sm md:text-base leading-relaxed hover:text-white transition-colors duration-300">
+            <p className="text-base md:text-lg leading-loose text-zinc-300 hover:text-white transition-colors duration-300">
               We are committed to transforming challenges into opportunities through innovative solutions tailored for the modern business landscape. Our expertise encompasses a wide range of services, including AI, automation, cloud support, and cybersecurity.
             </p>
           </div>
 
           {/* Right Column */}
-          <div className="flex flex-col justify-between md:pl-8 h-full space-y-6">
-            <p className="text-sm md:text-base leading-relaxed hover:text-white transition-colors duration-300">
-              As a forward-thinking consulting firm, we specialize in delivering cutting-edge strategies and transformative technologies that empower organizations to navigate complexities and drive sustainable growth.
-            </p>
+          <div className="flex flex-col justify-between md:pl-10 h-full space-y-8">
+            <div className="relative pl-6 border-l-2 border-[#FFE082]/60 py-2">
+              <p className="text-base md:text-lg leading-loose text-white/80 hover:text-white transition-colors duration-300 italic font-light font-sans tracking-wide">
+                "As a forward-thinking consulting firm, we specialize in delivering cutting-edge strategies and transformative technologies that empower organizations to navigate complexities and drive sustainable growth."
+              </p>
+            </div>
             
             <a 
               href="https://www.thevisionarys.com/solutions" 

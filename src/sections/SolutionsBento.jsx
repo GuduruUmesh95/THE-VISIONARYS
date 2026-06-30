@@ -144,7 +144,7 @@ export default function SolutionsBento() {
             return (
               <div 
                 key={pillar.id}
-                className={`${pillar.gridClass} group relative rounded-3xl overflow-hidden border border-white/5 bg-[#0a0a0c]/60 backdrop-blur-sm transition-all duration-300 ease-out hover:border-[#FFB84D]/40 hover:shadow-[0_0_20px_rgba(255,184,77,0.08)] hover:scale-[1.02] p-8 md:p-10 flex flex-col justify-between min-h-[360px] md:min-h-[380px]`}
+                className={`${pillar.gridClass} group relative rounded-[2rem] overflow-hidden border border-white/[0.06] bg-gradient-to-b from-white/[0.04] to-transparent backdrop-blur-xl transition-all duration-500 ease-out hover:border-white/[0.15] hover:bg-white/[0.05] hover:-translate-y-1 p-8 md:p-10 flex flex-col justify-between min-h-[360px] md:min-h-[400px] shadow-[inset_0_1px_1px_rgba(255,255,255,0.05),0_8px_24px_-8px_rgba(0,0,0,0.8)] hover:shadow-[inset_0_1px_1px_rgba(255,255,255,0.1),0_12px_48px_-12px_rgba(255,184,77,0.25)]`}
               >
                 {/* Decorative background visual */}
                 {pillar.bgVisual}

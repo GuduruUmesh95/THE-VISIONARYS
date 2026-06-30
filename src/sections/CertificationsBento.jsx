@@ -109,10 +109,22 @@ export default function CertificationsBento() {
               href={cert.href}
               target="_blank"
               rel="noopener noreferrer"
-              className={`${cert.gridClass} group relative rounded-3xl overflow-hidden border border-white/5 bg-[#0a0a0c]/60 backdrop-blur-sm transition-all duration-300 ease-out hover:border-[#FFB84D]/40 hover:shadow-[0_0_20px_rgba(255,184,77,0.08)] hover:scale-[1.02] p-8 flex flex-col items-center justify-between text-center min-h-[260px] block pointer-events-auto`}
+              className={`${cert.gridClass} group relative rounded-[1.5rem] overflow-hidden border border-white/[0.06] bg-gradient-to-br from-white/[0.03] to-transparent backdrop-blur-md transition-all duration-500 ease-out hover:border-[#FFB84D]/40 hover:bg-white/[0.05] hover:-translate-y-1 hover:shadow-[inset_0_1px_1px_rgba(255,255,255,0.1),0_8px_32px_-8px_rgba(255,184,77,0.15)] p-8 flex flex-col items-center justify-between text-center min-h-[260px] block pointer-events-auto`}
             >
+              {/* High-tech grid cell background */}
+              <div className="absolute inset-0 pointer-events-none opacity-[0.15] group-hover:opacity-30 transition-opacity duration-500" style={{
+                backgroundImage: 'linear-gradient(to right, #ffffff 1px, transparent 1px), linear-gradient(to bottom, #ffffff 1px, transparent 1px)',
+                backgroundSize: '20px 20px',
+                maskImage: 'radial-gradient(ellipse at center, black 10%, transparent 60%)',
+                WebkitMaskImage: 'radial-gradient(ellipse at center, black 10%, transparent 60%)'
+              }} />
+
+              {/* Digital tick accents */}
+              <div className="absolute top-4 left-4 w-2 h-2 border-t border-l border-[#FFB84D]/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute bottom-4 right-4 w-2 h-2 border-b border-r border-[#FFB84D]/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
               {/* Badge Visual */}
-              <div className="transform group-hover:scale-105 transition-transform duration-500 mb-4">
+              <div className="transform group-hover:scale-110 transition-transform duration-500 mb-4 z-10 relative">
                 {cert.badge}
               </div>
 

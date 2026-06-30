@@ -1,13 +1,17 @@
 import React, { useEffect, useRef, useState } from "react";
-import ScrollCanvas from "./components/ScrollCanvas";
-import Navbar from "./components/Navbar";
-import HeroSection from "./components/HeroSection";
-import ClientsSplit from "./components/ClientsSplit";
-import SolutionsBento from "./components/SolutionsBento";
-import RecognitionBento from "./components/RecognitionBento";
-import Perspective from "./components/Perspective";
-import CertificationsBento from "./components/CertificationsBento";
-import Footer from "./components/Footer";
+import ScrollCanvas from "./components/canvas/ScrollCanvas";
+import Navbar from "./components/layout/Navbar";
+import HeroSection from "./sections/HeroSection";
+import ClientsSplit from "./sections/ClientsSplit";
+import SolutionsBento from "./sections/SolutionsBento";
+import RecognitionBento from "./sections/RecognitionBento";
+import ProcessTimeline from "./sections/ProcessTimeline";
+import CertificationsBento from "./sections/CertificationsBento";
+import IntakeForm from "./sections/IntakeForm";
+import UnifiedServicesHub from "./sections/UnifiedServicesHub";
+import ExecutiveTeam from "./sections/ExecutiveTeam";
+import InsightsAndCareers from "./sections/InsightsAndCareers";
+import Footer from "./components/layout/Footer";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { MessageSquare } from "lucide-react";
@@ -172,6 +176,9 @@ export default function App() {
           {/* 1. Capabilities Bento Grid */}
           <SolutionsBento />
 
+          {/* 1.5 Unified Services Hub */}
+          <UnifiedServicesHub />
+
           {/* 2. Accolades & Awards */}
           <RecognitionBento />
 
@@ -183,8 +190,17 @@ export default function App() {
           {/* 4. Certifications and compliance frameworks */}
           <CertificationsBento />
 
-          {/* 5. Firm Perspective / About descriptions */}
-          <Perspective />
+          {/* 5. Firm Process Timeline (Replaces Perspective) */}
+          <ProcessTimeline />
+
+          {/* 6. Executive Team */}
+          <ExecutiveTeam />
+
+          {/* 7. Insights & Careers */}
+          <InsightsAndCareers />
+
+          {/* 8. Interactive Intake Form */}
+          <IntakeForm />
 
         </main>
 
