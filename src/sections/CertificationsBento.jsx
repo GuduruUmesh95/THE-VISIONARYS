@@ -101,15 +101,15 @@ export default function CertificationsBento() {
           </p>
         </div>
 
-        {/* Bento Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        {/* Horizontal flex row */}
+        <div className="flex flex-row items-stretch justify-center gap-6 w-full overflow-x-auto lg:overflow-x-visible pb-4">
           {certifications.map((cert) => (
             <a 
               key={cert.id}
               href={cert.href}
               target="_blank"
               rel="noopener noreferrer"
-              className={`${cert.gridClass} group relative rounded-[1.5rem] overflow-hidden border border-white/[0.06] bg-gradient-to-br from-white/[0.03] to-transparent backdrop-blur-md transition-all duration-500 ease-out hover:border-[#FFB84D]/40 hover:bg-white/[0.05] hover:-translate-y-1 hover:shadow-[inset_0_1px_1px_rgba(255,255,255,0.1),0_8px_32px_-8px_rgba(255,184,77,0.15)] p-8 flex flex-col items-center justify-between text-center min-h-[260px] block pointer-events-auto`}
+              className="flex-1 min-w-[250px] max-w-[260px] h-full group relative rounded-[1.5rem] overflow-hidden border border-white/[0.06] bg-gradient-to-br from-white/[0.03] to-transparent backdrop-blur-md transition-all duration-500 ease-out hover:border-[#FFB84D]/40 hover:bg-white/[0.05] hover:-translate-y-1 hover:shadow-[inset_0_1px_1px_rgba(255,255,255,0.1),0_8px_32px_-8px_rgba(255,184,77,0.15)] p-5 flex flex-col items-center justify-between text-center min-h-[230px] block pointer-events-auto"
             >
               {/* High-tech grid cell background */}
               <div className="absolute inset-0 pointer-events-none opacity-[0.15] group-hover:opacity-30 transition-opacity duration-500" style={{
@@ -133,7 +133,7 @@ export default function CertificationsBento() {
                 <h3 className="text-base font-sans font-bold text-[#FDFBF7] opacity-100 group-hover:text-[#FFB84D] transition-colors duration-300 mb-2 tracking-tight">
                   {cert.name}
                 </h3>
-                <p className="text-zinc-400 font-normal text-xs leading-relaxed max-w-sm mx-auto">
+                <p className="text-[13px] text-zinc-400/90 font-normal leading-relaxed max-w-sm mx-auto">
                   {cert.description}
                 </p>
               </div>

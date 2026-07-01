@@ -186,15 +186,15 @@ export default function App() {
             <ClientsSplit />
           </div>
 
-          {/* 4. Certifications and compliance frameworks */}
-          <CertificationsBento />
-
           {/* 5. Firm Process Timeline (Replaces Perspective) */}
           <ProcessTimeline />
 
 
           {/* 7. Insights & Careers */}
           <InsightsAndCareers />
+
+          {/* 4. Certifications and compliance frameworks */}
+          <CertificationsBento />
 
           {/* 8. Interactive Intake Form */}
           <IntakeForm />
