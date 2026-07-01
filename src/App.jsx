@@ -9,7 +9,6 @@ import ProcessTimeline from "./sections/ProcessTimeline";
 import CertificationsBento from "./sections/CertificationsBento";
 import IntakeForm from "./sections/IntakeForm";
 import UnifiedServicesHub from "./sections/UnifiedServicesHub";
-import ExecutiveTeam from "./sections/ExecutiveTeam";
 import InsightsAndCareers from "./sections/InsightsAndCareers";
 import Footer from "./components/layout/Footer";
 import { gsap } from "gsap";
@@ -152,7 +151,7 @@ export default function App() {
         className="fixed inset-0 w-full h-full pointer-events-none bg-contrast-mask"
         style={{ 
           zIndex: 2, 
-          background: "radial-gradient(circle at center, rgba(10, 10, 12, 0.70) 0%, rgba(10, 10, 12, 0.95) 100%)" 
+          background: "radial-gradient(circle at center, rgba(10, 10, 12, 0.40) 0%, rgba(10, 10, 12, 0.70) 100%)" 
         }}
       />
 
@@ -193,8 +192,6 @@ export default function App() {
           {/* 5. Firm Process Timeline (Replaces Perspective) */}
           <ProcessTimeline />
 
-          {/* 6. Executive Team */}
-          <ExecutiveTeam />
 
           {/* 7. Insights & Careers */}
           <InsightsAndCareers />
