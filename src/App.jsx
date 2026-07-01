@@ -7,7 +7,7 @@ import SolutionsBento from "./sections/SolutionsBento";
 import RecognitionBento from "./sections/RecognitionBento";
 import ProcessTimeline from "./sections/ProcessTimeline";
 import CertificationsBento from "./sections/CertificationsBento";
-import IntakeForm from "./sections/IntakeForm";
+import Contact from "./components/Contact";
 import UnifiedServicesHub from "./sections/UnifiedServicesHub";
 import InsightsAndCareers from "./sections/InsightsAndCareers";
 import Footer from "./components/layout/Footer";
@@ -196,8 +196,8 @@ export default function App() {
           {/* 4. Certifications and compliance frameworks */}
           <CertificationsBento />
 
-          {/* 8. Interactive Intake Form */}
-          <IntakeForm />
+          {/* 8. Contact & Map Section */}
+          <Contact />
 
         </main>
 
