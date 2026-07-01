@@ -1,7 +1,9 @@
-import React from "react";
-import { Cpu, ShieldCheck, Landmark, Cloud } from "lucide-react";
+import React, { useState } from "react";
+import { Cpu, ShieldCheck, Landmark, Cloud, Network, Compass, Server, BarChart3, ChevronLeft, ChevronRight } from "lucide-react";
 
 export default function SolutionsBento() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
   const pillars = [
     {
       id: "ai",
@@ -9,7 +11,6 @@ export default function SolutionsBento() {
       subtitle: "Flagship Capability",
       desc: "Architecting agentic workflows and intelligent systems. We integrate advanced AI consulting and automated operations directly into core enterprise pipelines, enhancing efficiency and scaling decision-making intelligence.",
       icon: Cpu,
-      gridClass: "md:col-span-1 md:row-span-1",
       accent: "#FFB84D",
       imgSrc: "/solutions_ai.png",
       bgVisual: (
@@ -40,7 +41,6 @@ export default function SolutionsBento() {
       subtitle: "Industry Specialism",
       desc: "Deep vertical expertise tailored for regulated environments, risk management, compliance pipelines, and core modernizations for legacy banking infrastructures.",
       icon: Landmark,
-      gridClass: "md:col-span-1 md:row-span-1",
       accent: "#E6A13B",
       imgSrc: "/solutions_finance.png",
       bgVisual: (
@@ -70,7 +70,6 @@ export default function SolutionsBento() {
       subtitle: "Security & Trust",
       desc: "Cyber Essentials Plus certified. Offering rigorous threat intelligence, round-the-clock vulnerability assessments, and robust identity access management architectures.",
       icon: ShieldCheck,
-      gridClass: "md:col-span-1 md:row-span-1",
       accent: "#FFB84D",
       imgSrc: "/solutions_cyber.png",
       bgVisual: (
@@ -98,7 +97,6 @@ export default function SolutionsBento() {
       subtitle: "Systems & Infrastructure",
       desc: "Scaling containerized infrastructures, modern CI/CD orchestration pipelines, cloud-native deployments, and serverless architectures tailored for hyper-availability and compliance.",
       icon: Cloud,
-      gridClass: "md:col-span-1 md:row-span-1",
       accent: "#E6A13B",
       imgSrc: "/solutions_devops.png",
       bgVisual: (
@@ -115,12 +113,143 @@ export default function SolutionsBento() {
           <path d="M 0 180 Q 75 140 150 180 T 300 180 T 450 180 T 600 180" fill="none" stroke="#E6A13B" strokeWidth="1" strokeOpacity="0.3" className="wave-path-devops" />
         </svg>
       )
+    },
+    {
+      id: "arch",
+      title: "Enterprise Architecture",
+      subtitle: "Blueprint & Governance",
+      desc: "Designing scalable blueprints and robust governance frameworks. We align business capabilities with technology platforms for resilient, future-ready enterprise operations.",
+      icon: Network,
+      accent: "#FFB84D",
+      imgSrc: "/image 1.avif",
+      bgVisual: (
+        <svg className="absolute inset-0 w-full h-full opacity-[0.06] group-hover:opacity-[0.12] transition-opacity duration-500 pointer-events-none" xmlns="http://www.w3.org/2000/svg">
+          <style>{`
+            @keyframes pulseGrid {
+              0%, 100% { opacity: 0.2; }
+              50% { opacity: 0.6; }
+            }
+            .grid-node {
+              animation: pulseGrid 3s ease-in-out infinite;
+            }
+          `}</style>
+          <g stroke="#FFB84D" strokeWidth="1" fill="none">
+            <circle cx="50" cy="50" r="3" fill="#FFB84D" className="grid-node" />
+            <circle cx="150" cy="50" r="3" fill="#FFB84D" className="grid-node" style={{ animationDelay: "0.5s" }} />
+            <circle cx="100" cy="120" r="3" fill="#FFB84D" className="grid-node" style={{ animationDelay: "1s" }} />
+            <line x1="50" y1="50" x2="100" y2="120" strokeOpacity="0.4" />
+            <line x1="150" y1="50" x2="100" y2="120" strokeOpacity="0.4" />
+          </g>
+        </svg>
+      )
+    },
+    {
+      id: "strategy",
+      title: "Digital Strategy & M&A",
+      subtitle: "Growth & Transition",
+      desc: "Navigating digital integration, technology due diligence, and portfolio synergies. We drive strategic readiness and seamless business transitions during merger integrations.",
+      icon: Compass,
+      accent: "#E6A13B",
+      imgSrc: "/image 2.avif",
+      bgVisual: (
+        <svg className="absolute inset-0 w-full h-full opacity-[0.06] group-hover:opacity-[0.12] transition-opacity duration-500 pointer-events-none" xmlns="http://www.w3.org/2000/svg">
+          <style>{`
+            @keyframes compassRotate {
+              0% { transform: translate(50%, 50%) rotate(0deg); }
+              100% { transform: translate(50%, 50%) rotate(360deg); }
+            }
+            .compass-dial {
+              transform-origin: center;
+              animation: compassRotate 20s linear infinite;
+            }
+          `}</style>
+          <circle cx="150" cy="150" r="40" stroke="#E6A13B" strokeWidth="1" fill="none" className="compass-dial" />
+          <line x1="150" y1="110" x2="150" y2="190" stroke="#E6A13B" strokeWidth="1.5" />
+          <line x1="110" y1="150" x2="190" y2="150" stroke="#E6A13B" strokeWidth="1.5" />
+        </svg>
+      )
+    },
+    {
+      id: "cloudmod",
+      title: "Cloud Modernization",
+      subtitle: "Scalability & Speed",
+      desc: "Migrating legacy architectures to state-of-the-art hybrid cloud ecosystems. We optimize cloud spend, enhance reliability, and accelerate software delivery speeds.",
+      icon: Server,
+      accent: "#FFB84D",
+      imgSrc: "/image 10.avif",
+      bgVisual: (
+        <svg className="absolute inset-0 w-full h-full opacity-[0.06] group-hover:opacity-[0.12] transition-opacity duration-500 pointer-events-none" xmlns="http://www.w3.org/2000/svg">
+          <style>{`
+            @keyframes serverPulse {
+              0%, 100% { fill: #FFB84D; opacity: 0.3; }
+              50% { fill: #FFF; opacity: 1; }
+            }
+            .server-led {
+              animation: serverPulse 2s infinite;
+            }
+          `}</style>
+          <g stroke="#FFB84D" strokeWidth="1" fill="none">
+            <rect x="80" y="60" width="140" height="25" rx="2" />
+            <rect x="80" y="95" width="140" height="25" rx="2" />
+            <circle cx="95" cy="72.5" r="2.5" className="server-led" />
+            <circle cx="95" cy="107.5" r="2.5" className="server-led" style={{ animationDelay: "1s" }} />
+          </g>
+        </svg>
+      )
+    },
+    {
+      id: "data",
+      title: "Data Intelligence & Analytics",
+      subtitle: "Analytics & Insights",
+      desc: "Structuring high-throughput data lakes and executing real-time stream analytics. We transform raw enterprise data into actionable predictive insights.",
+      icon: BarChart3,
+      accent: "#E6A13B",
+      imgSrc: "/image 11.avif",
+      bgVisual: (
+        <svg className="absolute inset-0 w-full h-full opacity-[0.06] group-hover:opacity-[0.12] transition-opacity duration-500 pointer-events-none" xmlns="http://www.w3.org/2000/svg">
+          <style>{`
+            @keyframes barGrow {
+              0%, 100% { height: 20px; y: 100px; }
+              50% { height: 50px; y: 70px; }
+            }
+            .data-bar-1 { animation: barGrow 3s ease-in-out infinite; }
+            .data-bar-2 { animation: barGrow 3s ease-in-out infinite 0.7s; }
+            .data-bar-3 { animation: barGrow 3s ease-in-out infinite 1.4s; }
+          `}</style>
+          <g fill="#E6A13B">
+            <rect x="100" y="100" width="10" height="20" className="data-bar-1" />
+            <rect x="120" y="100" width="10" height="20" className="data-bar-2" />
+            <rect x="140" y="100" width="10" height="20" className="data-bar-3" />
+          </g>
+        </svg>
+      )
     }
   ];
 
+  const handlePrev = () => {
+    setCurrentIndex((prev) => Math.max(0, prev - 1));
+  };
+
+  const handleNext = () => {
+    setCurrentIndex((prev) => Math.min(5, prev + 1));
+  };
+
   return (
-    <section id="solutions" className="w-full py-24 md:py-36 bg-transparent relative z-10">
-      <div className="max-w-[85vw] xl:max-w-[80vw] mx-auto px-4">
+    <section id="solutions" className="w-full pt-24 md:pt-36 pb-6 md:pb-8 bg-transparent relative z-10">
+      <style>{`
+        .solutions-track {
+          --card-width: 100%;
+          --card-gap: 1.5rem;
+        }
+        @media (min-width: 768px) {
+          .solutions-track {
+            --card-width: calc((100% - 3rem) / 3);
+            --card-gap: 1.5rem;
+          }
+        }
+      `}</style>
+
+      <div className="max-w-[85vw] xl:max-w-[80vw] mx-auto px-4 relative">
         
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
@@ -137,64 +266,113 @@ export default function SolutionsBento() {
           </p>
         </div>
 
-        {/* Bento Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-6">
-          {pillars.map((pillar) => {
-            const Icon = pillar.icon;
-            return (
-              <div 
-                key={pillar.id}
-                className={`${pillar.gridClass} group relative rounded-[2rem] overflow-hidden border border-white/[0.06] bg-gradient-to-b from-white/[0.04] to-transparent backdrop-blur-xl transition-all duration-500 ease-out hover:border-white/[0.15] hover:bg-white/[0.05] hover:-translate-y-1 p-8 md:p-10 flex flex-col justify-between min-h-[360px] md:min-h-[400px] shadow-[inset_0_1px_1px_rgba(255,255,255,0.05),0_8px_24px_-8px_rgba(0,0,0,0.8)] hover:shadow-[inset_0_1px_1px_rgba(255,255,255,0.1),0_12px_48px_-12px_rgba(255,184,77,0.25)]`}
-              >
-                {/* Decorative background visual */}
-                {pillar.bgVisual}
+        {/* Viewport Frame Wrapper */}
+        <div className="w-full overflow-hidden relative px-4 md:px-14 pt-10 pb-16">
+          
+          {/* Carousel Slide Track */}
+          <div 
+            className="solutions-track flex flex-row gap-6 items-center transition-transform duration-600 ease-[cubic-bezier(0.25,1,0.5,1)] will-change-transform"
+            style={{ transform: `translateX(calc(-${currentIndex} * (var(--card-width) + var(--card-gap))))` }}
+          >
+            {pillars.map((pillar, index) => {
+              const Icon = pillar.icon;
+              const isVisible = index >= currentIndex && index < currentIndex + 3;
+              const isCenter = index === currentIndex + 1;
 
-                {/* Top content */}
-                <div>
-                  <div className="flex items-center justify-between mb-8">
-                    <div className="p-3 bg-white/5 border-[0.5px] border-white/[0.06] group-hover:border-[#FFB84D]/30 text-white transition-all duration-300 rounded-xl">
-                      <Icon className="w-6 h-6 group-hover:text-[#FFB84D] transition-colors duration-300" />
+              let cardStyleClasses = "group relative rounded-3xl overflow-hidden border p-8 md:p-10 flex flex-col justify-between min-h-[360px] md:min-h-[400px] w-full min-w-full md:w-[calc((100%-3rem)/3)] md:min-w-[calc((100%-3rem)/3)] flex-shrink-0 transition-all duration-600 ease-[cubic-bezier(0.34,1.56,0.64,1)] will-change-transform ";
+
+              if (isCenter) {
+                // CENTER FOCUS ACCENT (Enhanced Bloom)
+                cardStyleClasses += "scale-105 opacity-100 border-[#FFB84D]/30 bg-[#0a0a0c]/85 backdrop-blur-md shadow-[0_0_25px_rgba(255,184,77,0.12)] hover:scale-[1.08] hover:border-[#FFB84D]/50";
+              } else if (isVisible) {
+                // ENTERING VISIBLE VIEW CARDS (Slow Bloom)
+                cardStyleClasses += "scale-100 opacity-100 border-white/5 bg-[#0a0a0c]/60 backdrop-blur-sm hover:border-[#FFB84D]/40 hover:scale-[1.03] hover:shadow-[0_0_20px_rgba(255,184,77,0.08)]";
+              } else {
+                // EXITING/OFF-SCREEN CARDS (Minimizing)
+                cardStyleClasses += "scale-90 opacity-40 border-white/5 bg-[#0a0a0c]/40 pointer-events-none";
+              }
+
+              return (
+                <div 
+                  key={pillar.id}
+                  className={cardStyleClasses}
+                >
+                  {/* Decorative background visual */}
+                  {pillar.bgVisual}
+
+                  {/* Top content */}
+                  <div>
+                    <div className="flex items-center justify-between mb-8">
+                      <div className="p-3 bg-white/5 border-[0.5px] border-white/[0.06] group-hover:border-[#FFB84D]/30 text-white transition-all duration-300 rounded-xl">
+                        <Icon className="w-6 h-6 group-hover:text-[#FFB84D] transition-colors duration-300" />
+                      </div>
+                      <span className="text-[9px] font-mono tracking-widest text-zinc-400 uppercase bg-white/5 px-3 py-1 rounded-sm">
+                        {pillar.subtitle}
+                      </span>
                     </div>
-                    <span className="text-[9px] font-mono tracking-widest text-zinc-400 uppercase bg-white/5 px-3 py-1 rounded-sm">
-                      {pillar.subtitle}
-                    </span>
+
+                    <h3 className="text-2xl font-sans font-bold text-[#FDFBF7] opacity-100 group-hover:text-[#FFB84D] transition-colors duration-300 mb-4 tracking-tight text-shadow-premium">
+                      {pillar.title}
+                    </h3>
+                    
+                    <p className="text-zinc-400 font-normal text-sm leading-relaxed max-w-xl">
+                      {pillar.desc}
+                    </p>
                   </div>
 
-                  <h3 className="text-2xl font-sans font-bold text-[#FDFBF7] opacity-100 group-hover:text-[#FFB84D] transition-colors duration-300 mb-4 tracking-tight text-shadow-premium">
-                    {pillar.title}
-                  </h3>
-                  
-                  <p className="text-zinc-400 font-normal text-sm leading-relaxed max-w-xl">
-                    {pillar.desc}
-                  </p>
-                </div>
+                  {/* Interactive Visual/Image slot in center-bottom */}
+                  <div className="relative w-full h-32 md:h-36 rounded-xl overflow-hidden border-[0.5px] border-white/[0.06] group-hover:border-white/20 transition-all duration-500 mt-6 mb-4">
+                    <img 
+                      src={pillar.imgSrc} 
+                      alt={pillar.title} 
+                      className="w-full h-full object-cover filter grayscale contrast-120 brightness-90 group-hover:grayscale-0 group-hover:scale-[1.03] transition-all duration-700"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0c]/80 to-transparent pointer-events-none" />
+                  </div>
 
-                {/* Interactive Visual/Image slot in center-bottom */}
-                <div className="relative w-full h-32 md:h-36 rounded-xl overflow-hidden border-[0.5px] border-white/[0.06] group-hover:border-white/20 transition-all duration-500 mt-6 mb-4">
-                  <img 
-                    src={pillar.imgSrc} 
-                    alt={pillar.title} 
-                    className="w-full h-full object-cover filter grayscale contrast-120 brightness-90 group-hover:grayscale-0 group-hover:scale-[1.03] transition-all duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0c]/80 to-transparent pointer-events-none" />
+                  {/* Bottom details reveal trigger */}
+                  <a 
+                    href={pillar.id === "deeptech" ? "#services" : "#solutions"}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      const targetId = pillar.id === "deeptech" ? "services" : "solutions";
+                      document.getElementById(targetId)?.scrollIntoView({ behavior: "smooth" });
+                    }}
+                    className="flex items-center gap-2 text-xs font-mono font-bold tracking-wider text-white group-hover:text-[#FFB84D] transition-colors duration-300 mt-4 pointer-events-auto"
+                  >
+                    <span>EXPLORE CAPABILITY</span>
+                    <span className="inline-block transform group-hover:translate-x-1.5 transition-transform duration-300">→</span>
+                  </a>
                 </div>
+              );
+            })}
+          </div>
 
-                {/* Bottom details reveal trigger */}
-                <a 
-                  href={pillar.id === "deeptech" ? "#services" : "#solutions"}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    const targetId = pillar.id === "deeptech" ? "services" : "solutions";
-                    document.getElementById(targetId)?.scrollIntoView({ behavior: "smooth" });
-                  }}
-                  className="flex items-center gap-2 text-xs font-mono font-bold tracking-wider text-white group-hover:text-[#FFB84D] transition-colors duration-300 mt-4 pointer-events-auto"
-                >
-                  <span>EXPLORE CAPABILITY</span>
-                  <span className="inline-block transform group-hover:translate-x-1.5 transition-transform duration-300">→</span>
-                </a>
-              </div>
-            );
-          })}
+          {/* Floating Glass Control Buttons */}
+          {/* Left Arrow Button */}
+          <button 
+            onClick={handlePrev}
+            disabled={currentIndex === 0}
+            className={`absolute left-2 md:left-4 top-1/2 -translate-y-1/2 z-30 bg-[#0a0a0c]/40 backdrop-blur-md border border-white/10 text-white rounded-full p-3.5 hover:bg-white/10 hover:border-[#FFB84D]/50 hover:text-[#FFB84D] hover:shadow-[0_0_15px_rgba(255,184,77,0.15)] transition-all duration-300 flex items-center justify-center pointer-events-auto disabled:pointer-events-none ${
+              currentIndex === 0 ? "opacity-0 pointer-events-none" : "opacity-100"
+            }`}
+            aria-label="Previous capability"
+          >
+            <ChevronLeft className="w-5 h-5" />
+          </button>
+
+          {/* Right Arrow Button */}
+          <button 
+            onClick={handleNext}
+            disabled={currentIndex === 5}
+            className={`absolute right-2 md:right-4 top-1/2 -translate-y-1/2 z-30 bg-[#0a0a0c]/40 backdrop-blur-md border border-white/10 text-white rounded-full p-3.5 hover:bg-white/10 hover:border-[#FFB84D]/50 hover:text-[#FFB84D] hover:shadow-[0_0_15px_rgba(255,184,77,0.15)] transition-all duration-300 flex items-center justify-center pointer-events-auto disabled:pointer-events-none ${
+              currentIndex === 5 ? "opacity-0 pointer-events-none" : "opacity-100"
+            }`}
+            aria-label="Next capability"
+          >
+            <ChevronRight className="w-5 h-5" />
+          </button>
+
         </div>
 
       </div>

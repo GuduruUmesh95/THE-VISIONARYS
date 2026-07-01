@@ -89,7 +89,7 @@ export default function ClientsSplit() {
                 <img 
                   src={client.src} 
                   alt={`${client.name} Logo`}
-                  className="w-full h-full object-contain p-3 md:p-4 bg-white rounded-2xl relative z-10 transition-all duration-500 filter grayscale contrast-[1.1] opacity-90 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-[1.02]"
+                  className="w-full h-full object-contain p-3 md:p-4 bg-white rounded-2xl relative z-10 transition-all duration-500 grayscale-0 opacity-100 filter-none group-hover:scale-[1.02]"
                 />
               </div>
             ))}
@@ -117,7 +117,7 @@ export default function ClientsSplit() {
                 <img 
                   src={client.src} 
                   alt={`${client.name} Logo`}
-                  className="w-full h-full object-contain p-3 md:p-4 bg-white rounded-2xl relative z-10 transition-all duration-500 filter grayscale contrast-[1.1] opacity-90 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-[1.02]"
+                  className="w-full h-full object-contain p-3 md:p-4 bg-white rounded-2xl relative z-10 transition-all duration-500 grayscale-0 opacity-100 filter-none group-hover:scale-[1.02]"
                 />
               </div>
             ))}

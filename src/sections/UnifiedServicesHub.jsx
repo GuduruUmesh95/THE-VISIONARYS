@@ -73,7 +73,7 @@ export default function UnifiedServicesHub() {
   };
 
   return (
-    <section id="services-hub" className="w-full py-24 md:py-36 bg-transparent border-t border-white/5 relative z-10 overflow-hidden">
+    <section id="services-hub" className="w-full pt-4 md:pt-6 pb-24 md:pb-36 bg-transparent border-t border-white/5 relative z-10 overflow-hidden">
       
       {/* Background glow */}
       <div 
@@ -83,17 +83,8 @@ export default function UnifiedServicesHub() {
 
       <div className="max-w-[85vw] xl:max-w-[75vw] mx-auto px-4 relative z-10">
         
-        <div className="text-center max-w-3xl mx-auto mb-16 md:mb-24">
-          <span className="text-[10px] font-mono tracking-[0.3em] uppercase block mb-4 font-bold text-[#FFB300]">
-            Core Competencies
-          </span>
-          <h2 className="text-3xl md:text-5xl font-sans font-bold text-[#FDFBF7] tracking-tight leading-[1.1] text-shadow-premium mb-6">
-            Unified Services Hub
-          </h2>
-          <p className="text-zinc-400 font-normal text-sm md:text-base leading-relaxed max-w-2xl mx-auto">
-            Comprehensive consulting and technical execution across the most critical domains of modern enterprise technology.
-          </p>
-        </div>
+        {/* Header spacer block to preserve scrolling bounds */}
+        <div className="h-4 md:h-8" />
 
         <div className="max-w-4xl mx-auto flex flex-col gap-4">
           {services.map((service, idx) => {
