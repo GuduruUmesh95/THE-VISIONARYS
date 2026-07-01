@@ -13,7 +13,7 @@ import InsightsAndCareers from "./sections/InsightsAndCareers";
 import Footer from "./components/layout/Footer";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { MessageSquare } from "lucide-react";
+import AIChatbot from "./components/AIChatbot";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -205,16 +205,8 @@ export default function App() {
         <Footer />
       </div>
 
-      {/* Floating WhatsApp Chat Widget (Correct Number: +1 646 466 3838) */}
-      <a
-        href="https://wa.me/16464663838"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="fixed bottom-6 right-6 z-50 w-14 h-14 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-[0_4px_20px_rgba(37,211,102,0.3)] hover:shadow-[0_4px_25px_rgba(37,211,102,0.5)] hover:scale-110 active:scale-95 transition-all duration-300 pointer-events-auto"
-        aria-label="Chat on WhatsApp"
-      >
-        <MessageSquare className="w-6 h-6 fill-white stroke-none" />
-      </a>
+      {/* Interactive AI Chatbot Widget */}
+      <AIChatbot />
     </div>
   );
 }

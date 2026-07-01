@@ -3,6 +3,7 @@
 @import "tailwindcss";
 
 @theme {
+  --breakpoint-xs: 380px;
   --color-background: #0a0a0c;
   --color-accent-glow: #ff8a3d;
   --color-accent-light: #ffae5c;

@@ -3,6 +3,8 @@ import { Mail, Phone, MapPin, CheckCircle2 } from "lucide-react";
 
 export default function Contact() {
   const [formState, setFormState] = useState("idle"); // idle, submitting, success
+  const [activeBudget, setActiveBudget] = useState(2);
+  const budgets = ["< $50k", "$50k - $250k", "$250k - $1M", "$1M+"];
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -14,12 +16,11 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="w-full py-24 bg-transparent border-t border-white/5 relative z-10 overflow-hidden scroll-mt-[80px]">
+    <section id="contact" className="w-full py-24 bg-[#0a0a0c] border-t border-white/5 relative z-10 overflow-hidden scroll-mt-[80px]">
       
       {/* Background ambient lighting */}
       <div 
-        className="absolute bottom-0 right-0 w-[800px] h-[800px] rounded-full pointer-events-none blur-[150px] opacity-[0.03]"
-        style={{ background: "radial-gradient(circle, #00d8ff 0%, transparent 70%)" }}
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full pointer-events-none blur-[140px] bg-[#FFB84D]/3"
       />
 
       <div className="w-full max-w-[85vw] xl:max-w-[80vw] mx-auto px-4 relative z-10">
@@ -35,7 +36,7 @@ export default function Contact() {
         </div>
 
         {/* Upper Row: Twin cards */}
-        <div className="w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch mb-8">
+        <div className="w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch mb-8">
           
           {/* Left Card: Solutions Info */}
           <div className="relative w-full rounded-[2.5rem] bg-[#0a0a0c]/80 backdrop-blur-2xl border border-white/[0.08] shadow-[0_8px_32px_rgba(0,0,0,0.8)] p-8 md:p-12 flex flex-col justify-between overflow-hidden">
@@ -58,8 +59,8 @@ export default function Contact() {
                   <Mail className="w-5 h-5 text-[#FFB84D]" />
                 </div>
                 <div className="flex flex-col text-left">
-                  <span className="text-[10px] font-mono tracking-widest text-[#FFB84D] uppercase font-bold mb-1">EMAIL ADDRESS</span>
-                  <span className="text-sm md:text-base font-mono text-[#FDFBF7] font-semibold">hello@thevisionarys.com</span>
+                  <span className="text-[#FFB84D] text-[10px] uppercase font-semibold tracking-wider mb-1">EMAIL ADDRESS</span>
+                  <span className="text-[#FDFBF7] text-[15px] font-medium font-mono">hello@thevisionarys.com</span>
                 </div>
               </div>
 
@@ -69,8 +70,8 @@ export default function Contact() {
                   <Phone className="w-5 h-5 text-[#FFB84D]" />
                 </div>
                 <div className="flex flex-col text-left">
-                  <span className="text-[10px] font-mono tracking-widest text-[#FFB84D] uppercase font-bold mb-1">PHONE LINE</span>
-                  <span className="text-sm md:text-base font-mono text-[#FDFBF7] font-semibold">+44 20 7946 0192</span>
+                  <span className="text-[#FFB84D] text-[10px] uppercase font-semibold tracking-wider mb-1">PHONE LINE</span>
+                  <span className="text-[#FDFBF7] text-[15px] font-medium font-mono">+44 20 7946 0192</span>
                 </div>
               </div>
 
@@ -80,8 +81,8 @@ export default function Contact() {
                   <MapPin className="w-5 h-5 text-[#FFB84D]" />
                 </div>
                 <div className="flex flex-col text-left">
-                  <span className="text-[10px] font-mono tracking-widest text-[#FFB84D] uppercase font-bold mb-1">OFFICE LOCATION</span>
-                  <span className="text-sm md:text-base font-mono text-[#FDFBF7] font-semibold">London, United Kingdom</span>
+                  <span className="text-[#FFB84D] text-[10px] uppercase font-semibold tracking-wider mb-1">OFFICE LOCATION</span>
+                  <span className="text-[#FDFBF7] text-[15px] font-medium font-mono">London, United Kingdom</span>
                 </div>
               </div>
             </div>
@@ -105,35 +106,49 @@ export default function Contact() {
                   Request consultation
                 </span>
                 
-                {/* Name */}
+                {/* Enterprise Name */}
                 <input 
                   required 
                   type="text" 
-                  placeholder="Your Name (Required)" 
-                  className="bg-white/[0.02] border border-white/10 rounded-lg p-3 text-sm text-white focus:outline-none focus:border-[#FFB84D]/50 w-full placeholder:text-zinc-600 transition-colors duration-300"
+                  placeholder="Enterprise Name" 
+                  className="bg-white/[0.02] border border-white/10 rounded-xl px-4 py-3 text-sm text-[#FDFBF7] placeholder-zinc-600 focus:outline-none focus:border-[#FFB84D]/50 w-full transition-colors duration-300"
                 />
 
-                {/* Email */}
+                {/* Corporate Email */}
                 <input 
                   required 
                   type="email" 
-                  placeholder="Your Email (Required)" 
-                  className="bg-white/[0.02] border border-white/10 rounded-lg p-3 text-sm text-white focus:outline-none focus:border-[#FFB84D]/50 w-full placeholder:text-zinc-600 transition-colors duration-300"
+                  placeholder="Corporate Email" 
+                  className="bg-white/[0.02] border border-white/10 rounded-xl px-4 py-3 text-sm text-[#FDFBF7] placeholder-zinc-600 focus:outline-none focus:border-[#FFB84D]/50 w-full transition-colors duration-300"
                 />
 
-                {/* Subject */}
-                <input 
-                  type="text" 
-                  placeholder="Subject" 
-                  className="bg-white/[0.02] border border-white/10 rounded-lg p-3 text-sm text-white focus:outline-none focus:border-[#FFB84D]/50 w-full placeholder:text-zinc-600 transition-colors duration-300"
-                />
+                {/* Budget Selectors */}
+                <div className="space-y-3 text-left">
+                  <label className="text-[#FFB84D] text-[10px] uppercase font-semibold tracking-wider">Estimated Budget (USD)</label>
+                  <div className="flex flex-wrap gap-2">
+                    {budgets.map((b, i) => (
+                      <button
+                        key={i}
+                        type="button"
+                        onClick={() => setActiveBudget(i)}
+                        className={`py-2 px-3 text-xs font-mono font-semibold rounded-lg border transition-all duration-300 ${
+                          activeBudget === i
+                            ? "bg-[#FFE082]/10 border-[#FFE082]/50 text-[#FFE082] shadow-[0_0_15px_rgba(255,224,130,0.15)]"
+                            : "bg-white/[0.02] border-white/10 text-zinc-500 hover:border-white/30"
+                        }`}
+                      >
+                        {b}
+                      </button>
+                    ))}
+                  </div>
+                </div>
 
-                {/* Message */}
+                {/* Project Scope Textarea */}
                 <textarea 
                   required 
                   rows={4}
-                  placeholder="Message (Required)" 
-                  className="bg-white/[0.02] border border-white/10 rounded-lg p-3 text-sm text-white focus:outline-none focus:border-[#FFB84D]/50 w-full placeholder:text-zinc-600 transition-colors duration-300 resize-none"
+                  placeholder="Project Scope" 
+                  className="bg-white/[0.02] border border-white/10 rounded-xl px-4 py-3 text-sm text-[#FDFBF7] placeholder-zinc-600 focus:outline-none focus:border-[#FFB84D]/50 w-full transition-colors duration-300 resize-none"
                 />
               </div>
 
@@ -141,9 +156,9 @@ export default function Contact() {
               <button 
                 type="submit"
                 disabled={formState === "submitting"}
-                className="w-full py-4 bg-gradient-to-r from-[#FFE082] to-[#FF6D00] hover:from-white hover:to-white text-[#0a0a0c] font-sans font-bold rounded-xl shadow-[0_0_20px_rgba(255,184,77,0.15)] hover:shadow-[0_0_30px_rgba(255,255,255,0.3)] transition-all duration-300 pointer-events-auto cursor-pointer flex items-center justify-center gap-2 mt-4 disabled:opacity-50"
+                className="w-full py-3.5 bg-[#FFB84D] hover:bg-[#FFE082] text-[#0a0a0c] font-bold rounded-xl shadow-[0_4px_25px_rgba(255,184,77,0.15)] hover:shadow-[0_4px_30px_rgba(255,184,77,0.25)] transition-all duration-300 pointer-events-auto cursor-pointer flex items-center justify-center gap-2 mt-4 disabled:opacity-50"
               >
-                <span>{formState === "submitting" ? "TRANSMITTING..." : "REQUEST CONSULTATION"}</span>
+                <span>{formState === "submitting" ? "INITIALIZING..." : "INITIALIZE ENGAGEMENT"}</span>
               </button>
             </form>
           </div>
@@ -151,7 +166,7 @@ export default function Contact() {
         </div>
 
         {/* Lower Row: Widescreen Map */}
-        <div className="w-full max-w-7xl mx-auto h-[320px] md:h-[380px] rounded-2xl overflow-hidden border border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.5)] relative mb-16">
+        <div className="w-full max-w-7xl mx-auto h-[320px] md:h-[380px] rounded-2xl overflow-hidden border border-white/10 shadow-[0_12px_40px_rgba(0,0,0,0.5)] relative mb-16">
           <iframe 
             src="https://maps.google.com/maps?q=London&t=&z=13&ie=UTF8&iwloc=&output=embed" 
             className="w-full h-full border-0 grayscale contrast-[1.15] invert-[0.92] sepia-[0.08]"
