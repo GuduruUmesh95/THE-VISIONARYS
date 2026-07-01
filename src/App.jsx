@@ -164,7 +164,7 @@ export default function App() {
         <section 
           ref={heroContainerRef} 
           id="home"
-          className="relative w-full h-screen flex flex-col justify-between overflow-hidden bg-transparent"
+          className="relative w-full h-screen flex flex-col justify-between overflow-hidden bg-transparent scroll-mt-[80px]"
         >
           <HeroSection />
         </section>

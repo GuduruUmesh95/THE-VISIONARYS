@@ -83,7 +83,7 @@ export default function CertificationsBento() {
   ];
 
   return (
-    <section id="services" className="w-full py-24 md:py-36 bg-transparent border-t border-white/5 relative z-10">
+    <section id="certifications" className="w-full py-24 md:py-36 bg-transparent border-t border-white/5 relative z-10 scroll-mt-[80px]">
       <div className="max-w-[85vw] xl:max-w-[80vw] mx-auto px-4">
         
         {/* Section Header */}

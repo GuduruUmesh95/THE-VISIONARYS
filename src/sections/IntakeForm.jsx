@@ -16,7 +16,7 @@ export default function IntakeForm() {
   };
 
   return (
-    <section id="contact" className="w-full py-24 md:py-36 bg-transparent border-t border-white/5 relative z-10 overflow-hidden">
+    <section id="contact" className="w-full py-24 md:py-36 bg-transparent border-t border-white/5 relative z-10 overflow-hidden scroll-mt-[80px]">
       
       <div 
         className="absolute bottom-0 right-0 w-[800px] h-[800px] rounded-full pointer-events-none blur-[150px] opacity-[0.03]"

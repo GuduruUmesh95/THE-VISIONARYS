@@ -79,7 +79,7 @@ export default function ProcessTimeline() {
   }, []);
 
   return (
-    <section ref={containerRef} id="process" className="w-full py-24 md:py-36 bg-transparent border-t border-white/5 relative z-10 overflow-hidden">
+    <section ref={containerRef} id="process" className="w-full py-24 md:py-36 bg-transparent border-t border-white/5 relative z-10 overflow-hidden scroll-mt-[80px]">
       
       {/* Background ambient lighting */}
       <div 

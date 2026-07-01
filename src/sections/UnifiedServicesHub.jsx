@@ -73,7 +73,7 @@ export default function UnifiedServicesHub() {
   };
 
   return (
-    <section id="services-hub" className="w-full pt-4 md:pt-6 pb-24 md:pb-36 bg-transparent border-t border-white/5 relative z-10 overflow-hidden">
+    <section id="services" className="w-full pt-4 md:pt-6 pb-24 md:pb-36 bg-transparent border-t border-white/5 relative z-10 overflow-hidden scroll-mt-[80px]">
       
       {/* Background glow */}
       <div 

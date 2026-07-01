@@ -235,7 +235,7 @@ export default function SolutionsBento() {
   };
 
   return (
-    <section id="solutions" className="w-full pt-24 md:pt-36 pb-6 md:pb-8 bg-transparent relative z-10">
+    <section id="solutions" className="w-full pt-24 md:pt-36 pb-6 md:pb-8 bg-transparent relative z-10 scroll-mt-[80px]">
       <style>{`
         .solutions-track {
           --card-width: 100%;

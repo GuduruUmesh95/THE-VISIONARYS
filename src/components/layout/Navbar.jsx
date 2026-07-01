@@ -66,10 +66,14 @@ export default function Navbar() {
   const handleAnchorClick = (e, href) => {
     if (href.startsWith("#")) {
       e.preventDefault();
-      const targetId = href === "#home" ? "home" : href.substring(1);
-      const targetElement = document.getElementById(targetId);
-      if (targetElement) {
-        targetElement.scrollIntoView({ behavior: "smooth" });
+      if (href === "#home") {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      } else {
+        const targetId = href.substring(1);
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+          targetElement.scrollIntoView({ behavior: "smooth" });
+        }
       }
     }
   };
@@ -107,13 +111,13 @@ export default function Navbar() {
         </a>
 
         {/* Links */}
-        <nav className="hidden lg:flex items-center gap-6">
+        <nav className="hidden lg:flex items-center gap-x-4">
           {navLinks.map((link) => (
             <a 
               key={link.label}
               href={link.href}
               onClick={(e) => handleAnchorClick(e, link.href)}
-              className="text-[#FDFBF7] hover:bg-white/[0.02] hover:border-[#FFB84D]/40 hover:shadow-[0_0_12px_rgba(255,184,77,0.15)] border border-transparent backdrop-blur-md rounded-lg px-4 py-1.5 transition-all duration-300 pointer-events-auto"
+              className="text-[#FDFBF7] text-[13px] font-medium tracking-wide border border-transparent backdrop-blur-md rounded-lg px-3 py-1.5 hover:text-[#FFB84D] hover:scale-[1.01] hover:border-[#FFB84D]/20 hover:bg-white/[0.02] transition-all duration-300 pointer-events-auto"
             >
               {link.label}
             </a>
@@ -124,7 +128,7 @@ export default function Navbar() {
         <a 
           href="#contact" 
           onClick={(e) => handleAnchorClick(e, "#contact")}
-          className="border-[0.5px] border-white/[0.06] hover:border-[#FFB84D]/30 bg-white/[0.03] hover:bg-[#FFB84D]/[0.05] text-[#FDFBF7] hover:text-white px-5 py-2 rounded-lg text-sm transition-all duration-300 font-sans font-semibold text-shadow-premium pointer-events-auto"
+          className="border-[0.5px] border-white/[0.06] bg-white/[0.03] text-[#FDFBF7] px-6 py-3 rounded-lg text-sm md:text-[15px] font-semibold tracking-wide transition-all duration-300 hover:scale-[1.03] hover:bg-white hover:text-[#0a0a0c] text-shadow-premium pointer-events-auto"
         >
           Get in Touch
         </a>

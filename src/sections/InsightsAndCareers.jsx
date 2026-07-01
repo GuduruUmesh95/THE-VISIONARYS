@@ -65,7 +65,7 @@ export default function InsightsAndCareers() {
   }, []);
 
   return (
-    <section ref={containerRef} id="insights-careers" className="w-full py-24 md:py-36 bg-[#030303] relative z-10 overflow-hidden border-t border-white/5">
+    <section ref={containerRef} id="insights" className="w-full py-24 md:py-36 bg-[#030303] relative z-10 overflow-hidden border-t border-white/5 scroll-mt-[80px]">
       
       <div className="max-w-[85vw] xl:max-w-[80vw] mx-auto px-4 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24">
