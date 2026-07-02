@@ -128,7 +128,7 @@ export default function Navbar() {
         <a 
           href="#contact" 
           onClick={(e) => handleAnchorClick(e, "#contact")}
-          className="text-sm font-semibold border border-[#FFB84D]/40 text-[#FFB84D] bg-[#FFB84D]/5 px-5 py-2.5 rounded-lg transition-all duration-300 hover:bg-[#FFB84D] hover:text-[#0a0a0c] hover:border-[#FFB84D] hover:shadow-[0_0_20px_rgba(255,184,77,0.3)] hover:scale-[1.03] text-shadow-premium pointer-events-auto"
+          className="text-sm font-medium tracking-wide border border-[#FFB84D]/40 text-[#FFB84D] bg-[#FFB84D]/5 px-5 py-2.5 rounded-lg transition-all duration-300 hover:bg-[#FFB84D]/10 hover:border-[#FFB84D] hover:shadow-[0_0_15px_rgba(255,184,77,0.25)] hover:scale-[1.02] active:scale-[0.98] text-shadow-premium pointer-events-auto"
         >
           Get in Touch
         </a>
