@@ -65,11 +65,11 @@ export default function AIChatbot() {
   }, [messages, isTyping]);
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 pointer-events-auto">
+    <div className="fixed bottom-6 right-6 z-[9999] pointer-events-auto">
       
       {/* 1. Expandable Chat Panel */}
       <div 
-        className={`absolute bottom-24 right-0 w-[340px] xs:w-[380px] sm:w-[420px] md:w-[480px] h-[540px] md:h-[640px] bg-[#0a0a0c]/95 border border-white/10 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.8)] backdrop-blur-xl flex flex-col overflow-hidden transition-all duration-300 origin-bottom-right will-change-transform ${
+        className={`absolute bottom-24 right-0 w-[340px] xs:w-[380px] sm:w-[420px] md:w-[480px] h-[460px] md:h-[540px] max-h-[80vh] bg-[#0a0a0c]/95 border border-white/10 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.8)] backdrop-blur-xl flex flex-col overflow-hidden transition-all duration-300 origin-bottom-right will-change-transform ${
           isOpen ? "scale-100 opacity-100 translate-y-0" : "scale-75 opacity-0 translate-y-10 pointer-events-none"
         }`}
       >

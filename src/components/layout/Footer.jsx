@@ -40,8 +40,7 @@ export default function Footer() {
               />
               <div className="flex flex-col text-left">
                 <span 
-                  className="text-white font-display font-extrabold tracking-[0.2em] text-sm leading-none text-shadow-premium"
-                  style={{ color: "#ffffff" }}
+                  className="text-white font-display font-semibold tracking-wide text-xl leading-none"
                 >
                   The Visionarys
                 </span>

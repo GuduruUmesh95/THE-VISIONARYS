@@ -73,12 +73,12 @@ export default function HeroSection() {
           
           {/* Headline (class: hero-headline) */}
           <div className="hero-headline w-full lg:w-[65%] text-left pointer-events-auto transition-transform duration-300">
-            <span className="hero-headline-badge inline-block text-[10px] md:text-[11px] font-display tracking-[0.3em] text-[#FFE082] border border-[#FFE082]/30 bg-[#FFE082]/10 backdrop-blur-md px-6 py-2 rounded-full mb-8 uppercase font-semibold shadow-[0_0_20px_rgba(255,224,130,0.15)]">
+            <span className="hero-headline-badge inline-block text-[10px] md:text-[11px] font-sans tracking-[0.3em] text-[#FFE082] border border-[#FFE082]/30 bg-[#FFE082]/10 backdrop-blur-md px-6 py-2 rounded-full mb-8 uppercase font-semibold shadow-[0_0_20px_rgba(255,224,130,0.15)]">
               Consulting & Deep Tech Integration
             </span>
             
             <div className="hero-headline-title space-y-6">
-              <h1 className="hero-headline-title-text text-3xl md:text-5xl lg:text-[3.5rem] font-display font-extrabold tracking-tight leading-[1.05] text-white text-shadow-premium drop-shadow-[0_8px_24px_rgba(0,0,0,0.95)]">
+              <h1 className="hero-headline-title-text text-4xl md:text-5xl lg:text-6xl font-sans font-bold tracking-tight leading-tight text-transparent bg-clip-text bg-gradient-to-br from-white to-white/40  drop-shadow-[0_8px_24px_rgba(0,0,0,0.95)]">
                 Transforming <br className="md:hidden" />
                 <span className="inline-block bg-gradient-to-b from-[#FFE082] via-[#FFB300] to-[#FF6D00] bg-clip-text text-transparent pb-2" style={{ textShadow: "none" }}>Business</span>
               </h1>
@@ -124,7 +124,7 @@ export default function HeroSection() {
           <span className="text-xs font-mono tracking-[0.4em] mb-6 uppercase font-bold text-[#FFE082] drop-shadow-[0_0_10px_rgba(255,224,130,0.5)]">
             Empowering Tomorrow
           </span>
-          <h2 className="text-4xl md:text-6xl lg:text-7xl font-sans font-extrabold text-[#FDFBF7] opacity-100 tracking-tighter leading-[1.1] text-shadow-premium drop-shadow-[0_12px_24px_rgba(0,0,0,0.98)]">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-sans font-bold text-transparent bg-clip-text bg-gradient-to-br from-white to-white/40 tracking-tight leading-tight  drop-shadow-[0_12px_24px_rgba(0,0,0,0.98)]">
             Innovative Solutions <br className="hidden md:block"/> for a Modern World
           </h2>
           <div className="w-24 h-[1px] bg-gradient-to-r from-transparent via-[#FFE082]/50 to-transparent my-10 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]" />
@@ -152,3 +152,5 @@ export default function HeroSection() {
     </div>
   );
 }
+
+

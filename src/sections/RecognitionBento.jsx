@@ -1,89 +1,130 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
+import { ArrowUpRight } from "lucide-react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function RecognitionBento() {
+  const containerRef = useRef(null);
+
   const accolades = [
     {
       id: "global100",
       source: "Global 100 - 2026",
-      desc: "Congratulations! Your organisation has been recognised in the Global 100 - 2026 for Best Management Consulting Business of the Year 2026 in United Kingdom.",
+      desc: "Best Management Consulting Business of the Year 2026 in United Kingdom.",
       href: "https://www.gpmg.uk/winners/global-100-2026",
-      logo: (
-        <img 
-          src="/award-global100.png" 
-          alt="Global 100 Winner 2026 Logo" 
-          className="w-28 h-28 md:w-36 md:h-36 mx-auto mb-6 object-contain transform group-hover:scale-[1.05] transition-all duration-500"
-        />
-      )
+      logo: "/award-global100.png"
     },
     {
       id: "matoday",
       source: "M&A Today Global Awards - 2026",
-      desc: "Congratulations! Your organisation has been recognised in the M&A Today Global Awards - 2026 for Best Management Consulting Business of the Year 2026 in United Kingdom.",
+      desc: "Best Management Consulting Business of the Year 2026 in United Kingdom.",
       href: "https://www.mna-today.co.uk/winners/global-awards-2026",
-      logo: (
-        <img 
-          src="/award-matoday.png" 
-          alt="M&A Today Global Awards 2026 Logo" 
-          className="w-28 h-28 md:w-36 md:h-36 mx-auto mb-6 object-contain transform group-hover:scale-[1.05] transition-all duration-500"
-        />
-      )
+      logo: "/award-matoday.png"
     }
   ];
 
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    if (mediaQuery.matches) return;
+
+    const ctx = gsap.context(() => {
+      gsap.fromTo(".award-row", 
+        { opacity: 0, x: 40 },
+        {
+          opacity: 1, 
+          x: 0,
+          duration: 0.8,
+          stagger: 0.15,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: ".awards-list",
+            start: "top 80%",
+          }
+        }
+      );
+    }, containerRef);
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <section id="recognition" className="w-full py-24 md:py-36 bg-[#0a0a0c] border-t border-white/5 relative z-10 scroll-mt-[80px]">
+    <section 
+      ref={containerRef} 
+      id="recognition" 
+      className="w-full py-24 md:py-36 bg-[#0a0a0c] border-t border-b border-[#FFB84D]/30 relative z-10 scroll-mt-[80px]"
+    >
       <div className="max-w-[85vw] xl:max-w-[80vw] mx-auto px-4">
-        
-        {/* Section Header */}
-        <div className="max-w-3xl mb-16 md:mb-20">
-          <span className="text-[10px] font-mono tracking-[0.3em] uppercase block mb-3 font-bold text-[#FFB84D]">
-            Prestigious Accolades
-          </span>
-          <h2 className="text-3xl md:text-5xl font-sans font-bold text-[#FDFBF7] tracking-tight leading-[1.1] text-shadow-premium">
-            Global Recognition
-          </h2>
-          <div className="w-16 h-[1.5px] bg-white/20 mt-6" />
-        </div>
-
-        {/* Bento Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-          {accolades.map((award) => (
+        <div className="flex flex-col lg:flex-row gap-16 lg:gap-24">
+          
+          {/* Left Column: Massive Medallion / Typography */}
+          <div className="w-full lg:w-5/12 flex flex-col justify-center relative">
+            
+            {/* Background Glow */}
             <div 
-              key={award.id}
-              style={{ background: 'radial-gradient(circle at center, #121215 0%, #0c0c0e 100%)' }}
-              className="group relative rounded-3xl overflow-hidden border border-white/5 backdrop-blur-md transition-all duration-300 ease-out hover:border-[#FFB84D]/40 hover:shadow-[0_0_20px_rgba(255,184,77,0.08)] hover:scale-[1.02] p-8 md:p-12 flex flex-col items-center justify-between text-center min-h-[400px]"
-            >
-              {/* SVG Emblem Medallion */}
-              <div className="transform group-hover:scale-[1.04] transition-transform duration-500">
-                {award.logo}
-              </div>
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[400px] rounded-[100%] pointer-events-none blur-[100px] opacity-[0.08]"
+              style={{ background: "radial-gradient(ellipse, #FFB84D 0%, transparent 70%)" }}
+            />
+            
+            <div className="relative z-10">
+              <span className="text-[10px] font-mono tracking-[0.3em] uppercase block mb-6 font-bold text-[#FFB84D]">
+                Prestigious Accolades
+              </span>
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-sans font-bold text-transparent bg-clip-text bg-gradient-to-br from-white to-white/40 tracking-tight leading-tight mb-8">
+                Recognized<br />Excellence
+              </h2>
+              <div className="w-16 h-[2px] bg-[#FFB84D]/50 mb-8" />
+              <p className="text-zinc-400 font-sans text-sm md:text-base leading-relaxed max-w-sm">
+                Our relentless pursuit of perfection and strategic innovation has been globally recognized by leading industry authorities.
+              </p>
+            </div>
+          </div>
 
-              {/* Award Details */}
-              <div className="mt-4 flex-1 flex flex-col justify-center">
-                <span className="text-[9px] font-mono tracking-[0.25em] px-4 py-1.5 rounded-sm mx-auto mb-6 uppercase border font-bold text-white/90 border-white/10 bg-white/[0.03] group-hover:text-[#FFB84D] group-hover:border-[#FFB84D]/30 transition-all duration-300">
-                  {award.source}
-                </span>
-                
-                <blockquote className="text-sm md:text-base font-sans font-normal text-zinc-400 group-hover:text-white leading-relaxed max-w-md mx-auto transition-colors duration-300">
-                  "{award.desc}"
-                </blockquote>
-              </div>
-
-              {/* Verification link */}
+          {/* Right Column: Stacked List */}
+          <div className="w-full lg:w-7/12 awards-list flex flex-col gap-6">
+            {accolades.map((award) => (
               <a 
+                key={award.id}
                 href={award.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-6 text-xs font-mono font-bold tracking-wider text-white group-hover:text-[#FFB84D] transition-colors duration-300 hover:underline flex items-center gap-1.5 pointer-events-auto relative z-20"
+                className="award-row group relative flex flex-col md:flex-row items-start md:items-center gap-6 p-8 rounded-3xl bg-white/[0.02] border border-white/10 hover:border-[#FFB84D]/50 transition-all duration-500 hover:bg-[#0a0a0c]/80 hover:shadow-[0_0_40px_rgba(255,184,77,0.15)] overflow-hidden"
               >
-                <span>VERIFY ACCREDITATION</span>
-                <span>→</span>
-              </a>
-            </div>
-          ))}
-        </div>
+                
+                {/* Hover gradient highlight */}
+                <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#FFB84D] scale-y-0 group-hover:scale-y-100 transition-transform origin-top duration-300" />
+                
+                {/* Logo */}
+                <div className="w-20 h-20 md:w-24 md:h-24 shrink-0 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center p-3 relative z-10 group-hover:border-[#FFB84D]/30 transition-colors duration-500">
+                  <img 
+                    src={award.logo} 
+                    alt={award.source} 
+                    className="w-full h-full object-contain filter group-hover:drop-shadow-[0_0_10px_rgba(255,184,77,0.5)] transition-all duration-500"
+                  />
+                </div>
 
+                {/* Content */}
+                <div className="flex-1 relative z-10">
+                  <div className="flex justify-between items-start mb-2">
+                    <h3 className="text-xl font-bold font-sans text-white group-hover:text-[#FFB84D] transition-colors duration-300">
+                      {award.source}
+                    </h3>
+                    <ArrowUpRight className="w-5 h-5 text-zinc-500 group-hover:text-white transition-colors opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0 duration-300" />
+                  </div>
+                  <p className="text-zinc-400 font-sans text-sm leading-relaxed mb-4">
+                    {award.desc}
+                  </p>
+                  <span className="text-[10px] font-mono tracking-widest uppercase text-white/50 group-hover:text-white transition-colors duration-300 flex items-center gap-2">
+                    Verify Accreditation <span className="w-4 h-[1px] bg-white/30 group-hover:w-8 group-hover:bg-[#FFB84D] transition-all duration-500"></span>
+                  </span>
+                </div>
+              </a>
+            ))}
+          </div>
+
+        </div>
       </div>
     </section>
   );
 }
+

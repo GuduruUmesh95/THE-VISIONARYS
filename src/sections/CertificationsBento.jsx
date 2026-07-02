@@ -92,7 +92,7 @@ export default function CertificationsBento() {
             <span className="text-[10px] font-mono tracking-[0.3em] uppercase block mb-3 font-bold text-[#FFB84D]">
               Regulatory Compliance
             </span>
-            <h2 className="text-3xl md:text-5xl font-sans font-bold text-[#FDFBF7] opacity-100 tracking-tight leading-[1.1] text-shadow-premium">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-sans font-bold text-transparent bg-clip-text bg-gradient-to-br from-white to-white/40 tracking-tight leading-tight ">
               Certifications & Frameworks
             </h2>
           </div>
@@ -145,3 +145,5 @@ export default function CertificationsBento() {
     </section>
   );
 }
+
+

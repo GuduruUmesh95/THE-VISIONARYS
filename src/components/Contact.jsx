@@ -27,7 +27,7 @@ export default function Contact() {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-4xl md:text-5xl font-sans font-bold text-[#FDFBF7] tracking-tight text-shadow-premium mb-4">
+          <h2 className="text-center text-4xl md:text-5xl lg:text-6xl font-sans font-bold text-transparent bg-clip-text bg-gradient-to-br from-white to-white/40 tracking-tight leading-tight mb-4">
             INITIATE ENGAGEMENT
           </h2>
           <p className="text-zinc-400 font-normal text-sm md:text-base leading-relaxed">
