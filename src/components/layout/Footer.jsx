@@ -91,7 +91,7 @@ export default function Footer() {
               <p>Registered Office: London, United Kingdom</p>
               <p className="pt-2">
                 <span className="text-white/85 font-mono text-[10px] block">DIRECT LINK</span>
-                <a href="https://wa.me/16464663838" target="_blank" rel="noopener noreferrer" className="hover:underline text-white font-mono">+1 646 466 3838 (WhatsApp)</a>
+                <a href="https://wa.me/442079460192" target="_blank" rel="noopener noreferrer" className="hover:underline text-white font-mono">+44 20 7946 0192 (WhatsApp)</a>
               </p>
             </div>
           </div>
