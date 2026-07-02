@@ -16,7 +16,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="w-full py-24 bg-[#0a0a0c] border-t border-white/5 relative z-10 overflow-hidden scroll-mt-[80px]">
+    <section id="contact" className="w-full py-24 bg-transparent border-t border-white/5 relative z-10 overflow-hidden scroll-mt-[80px]">
       
       {/* Background ambient lighting */}
       <div 

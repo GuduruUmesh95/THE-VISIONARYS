@@ -14,7 +14,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="w-full bg-transparent border-t-[0.5px] border-white/[0.06] pt-20 pb-12 relative z-10 text-secondary">
+    <footer className="w-full bg-[#0a0a0c] border-t-[0.5px] border-white/[0.06] pt-20 pb-12 relative z-10 text-secondary">
       {/* Subtle overlay lines */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.01)_1px,transparent_1px)] bg-[size:100%_40px] pointer-events-none" />
 

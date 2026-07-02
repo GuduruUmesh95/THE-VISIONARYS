@@ -178,9 +178,6 @@ export default function App() {
           {/* 1.5 Unified Services Hub */}
           <UnifiedServicesHub />
 
-          {/* 2. Accolades & Awards */}
-          <RecognitionBento />
-
           {/* 3. Clients/Trust Marquee */}
           <div id="careers">
             <ClientsSplit />
@@ -195,6 +192,9 @@ export default function App() {
 
           {/* 4. Certifications and compliance frameworks */}
           <CertificationsBento />
+
+          {/* 2. Accolades & Awards */}
+          <RecognitionBento />
 
           {/* 8. Contact & Map Section */}
           <Contact />

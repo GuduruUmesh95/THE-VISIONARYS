@@ -27,7 +27,7 @@ export default function ClientsSplit() {
   const track2 = [...row2, ...row2, ...row2];
 
   return (
-    <section id="clients-split" className="w-full py-20 bg-transparent border-t-[0.5px] border-white/[0.06] relative z-10 overflow-hidden">
+    <section id="clients-split" className="w-full py-20 bg-[#0a0a0c] border-t border-b border-white/5 relative z-10 overflow-hidden">
       
       {/* Styles for opposite scrolling and hover pause */}
       <style dangerouslySetInnerHTML={{ __html: `
