@@ -3,12 +3,12 @@ import ScrollCanvas from "./components/canvas/ScrollCanvas";
 import Navbar from "./components/layout/Navbar";
 import HeroSection from "./sections/HeroSection";
 import ClientsSplit from "./sections/ClientsSplit";
-import SolutionsBento from "./sections/SolutionsBento";
+import SolutionsBentoDrawer from "./sections/SolutionsBentoDrawer";
+import SolutionsBentoModal from "./sections/SolutionsBentoModal";
 import RecognitionBento from "./sections/RecognitionBento";
 import ProcessTimeline from "./sections/ProcessTimeline";
 import CertificationsBento from "./sections/CertificationsBento";
 import Contact from "./components/Contact";
-import UnifiedServicesHub from "./sections/UnifiedServicesHub";
 import InsightsAndCareers from "./sections/InsightsAndCareers";
 import Footer from "./components/layout/Footer";
 import { gsap } from "gsap";
@@ -92,7 +92,7 @@ export default function App() {
         scrollTrigger: {
           trigger: heroContainerRef.current,
           start: "top top",
-          end: "+=2400", // CINEMATIC: Expanded scroll distance
+          end: "+=1200", // CINEMATIC: Reduced to prevent massive empty space
           pin: true,
           scrub: 0.5,
           onUpdate: (self) => {
@@ -172,11 +172,11 @@ export default function App() {
         {/* Main content sections without opaque background classes */}
         <main className="relative w-full bg-transparent">
           
-          {/* 1. Capabilities Bento Grid */}
-          <SolutionsBento />
-
-          {/* 1.5 Unified Services Hub */}
-          <UnifiedServicesHub />
+          {/* --- OPTIONS FOR REVIEW --- */}
+          <SolutionsBentoDrawer />
+          <SolutionsBentoModal />
+          {/* ------------------------- */}
+          {/* ------------------------- */}
 
           {/* 3. Clients/Trust Marquee */}
           <div id="careers">

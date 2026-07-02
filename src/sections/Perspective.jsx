@@ -23,7 +23,7 @@ export default function Perspective() {
             <div className="w-12 h-[1px] bg-gradient-to-r from-[#FFB84D]/40 to-transparent" />
           </div>
           
-          <h2 className="text-3xl md:text-5xl font-sans font-bold tracking-tight leading-[1.15] text-[#FDFBF7] opacity-100 text-shadow-premium">
+          <h2 className="text-center text-4xl md:text-5xl lg:text-6xl font-sans font-bold tracking-tight leading-tight text-transparent bg-clip-text bg-gradient-to-br from-white to-white/40 ">
             Empowering Tomorrow: <br />
             Innovative Solutions <br />
             for a Modern World.
@@ -38,7 +38,7 @@ export default function Perspective() {
 
           {/* Left Column */}
           <div className="space-y-8 md:pr-10">
-            <p className="text-base md:text-lg leading-loose text-zinc-300 hover:text-white transition-colors duration-300 first-letter:text-6xl first-letter:font-display first-letter:font-bold first-letter:text-[#FFE082] first-letter:mr-4 first-letter:float-left first-letter:leading-[0.8] first-letter:mt-2">
+            <p className="text-base md:text-lg leading-loose text-zinc-300 hover:text-white transition-colors duration-300 first-letter:text-6xl first-letter:font-sans first-letter:font-bold first-letter:text-[#FFE082] first-letter:mr-4 first-letter:float-left first-letter:leading-[0.8] first-letter:mt-2">
               We specialize in delivering end-to-end consulting and implementation services across industries, helping organizations tackle complex challenges like digital transformation, compliance, and risk management. Our expertise lies in bridging the gap between business needs and technical solutions, ensuring seamless integration and adoption of cutting-edge tools that drive measurable results.
             </p>
             <p className="text-base md:text-lg leading-loose text-zinc-300 hover:text-white transition-colors duration-300">
@@ -69,3 +69,5 @@ export default function Perspective() {
     </section>
   );
 }
+
+

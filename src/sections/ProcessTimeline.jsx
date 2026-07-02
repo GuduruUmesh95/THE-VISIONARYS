@@ -94,7 +94,7 @@ export default function ProcessTimeline() {
           <span className="text-[10px] font-mono tracking-[0.3em] uppercase block mb-4 font-bold text-[#FFB84D]">
             Firm Perspective
           </span>
-          <h2 className="text-3xl md:text-5xl font-sans font-bold text-[#FDFBF7] tracking-tight leading-[1.1] text-shadow-premium mb-6">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-sans font-bold text-transparent bg-clip-text bg-gradient-to-br from-white to-white/40 tracking-tight leading-tight  mb-6">
             Our Evolution & Mission
           </h2>
           <p className="text-zinc-400 font-normal text-sm md:text-base leading-relaxed max-w-2xl mx-auto">
@@ -152,3 +152,5 @@ export default function ProcessTimeline() {
     </section>
   );
 }
+
+
