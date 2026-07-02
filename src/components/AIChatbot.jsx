@@ -164,14 +164,14 @@ export default function AIChatbot() {
       {/* 2. Floating Trigger Button */}
       <button 
         onClick={() => setIsOpen(!isOpen)}
-        className="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-b from-[#18181b] to-[#0a0a0c] border border-[#FFB84D]/40 rounded-full flex items-center justify-center cursor-pointer shadow-[0_0_30px_rgba(255,184,77,0.2)] hover:border-[#FFB84D] transition-all duration-300 transform hover:scale-105 relative group pointer-events-auto"
+        className="w-14 h-14 md:w-16 md:h-16 bg-gradient-to-b from-[#18181b] to-[#0a0a0c] border border-[#FFB84D]/40 rounded-full flex items-center justify-center cursor-pointer shadow-[0_0_30px_rgba(255,184,77,0.2)] hover:border-[#FFB84D] transition-all duration-300 transform hover:scale-105 relative group pointer-events-auto"
         aria-label="Toggle AI Assistant"
       >
         {/* Pulsing glow ring */}
         <span className="animate-ping absolute inset-0 rounded-full border border-[#FFB84D]/20 pointer-events-none" />
 
         {/* Concept 2 "Active Concierge" SVG robot head vector */}
-        <svg viewBox="0 0 100 100" className="w-11 h-11 text-[#FFB84D] drop-shadow-[0_2px_8px_rgba(255,184,77,0.3)] transition-colors duration-300" xmlns="http://www.w3.org/2000/svg">
+        <svg viewBox="0 0 100 100" className="w-9 h-9 md:w-10 md:h-10 text-[#FFB84D] drop-shadow-[0_2px_8px_rgba(255,184,77,0.3)] transition-colors duration-300" xmlns="http://www.w3.org/2000/svg">
           <rect x="12" y="42" width="6" height="16" rx="3" fill="currentColor" />
           <rect x="82" y="42" width="6" height="16" rx="3" fill="currentColor" />
           <rect x="20" y="25" width="60" height="50" rx="25" fill="none" stroke="currentColor" strokeWidth="2.5" />
