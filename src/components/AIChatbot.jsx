@@ -80,7 +80,7 @@ export default function AIChatbot() {
               <Sparkles className="w-4 h-4 text-[#0a0a0c]" />
             </div>
             <div className="flex flex-col text-left">
-              <span className="text-[#FDFBF7] text-sm font-semibold tracking-wider font-sans">THE VISIONARYS</span>
+              <span className="text-[#FDFBF7] text-sm font-semibold tracking-wider font-sans">The Visionarys</span>
               <span className="text-[#25D366] text-[10px] font-mono flex items-center gap-1.5 mt-0.5 font-semibold">
                 <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#25D366] animate-pulse" />
                 System AI Online

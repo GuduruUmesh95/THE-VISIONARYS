@@ -40,10 +40,10 @@ export default function Footer() {
               />
               <div className="flex flex-col text-left">
                 <span 
-                  className="text-white font-display font-extrabold tracking-[0.2em] text-sm uppercase leading-none text-shadow-premium"
+                  className="text-white font-display font-extrabold tracking-[0.2em] text-sm leading-none text-shadow-premium"
                   style={{ color: "#ffffff" }}
                 >
-                  THE VISIONARYS
+                  The Visionarys
                 </span>
                 <span className="text-zinc-400 font-mono text-[8px] tracking-[0.12em] mt-1 font-bold">
                   ENVISION. INNOVATE. ACHIEVE.

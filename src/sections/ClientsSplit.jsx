@@ -2,20 +2,20 @@ import React from "react";
 
 export default function ClientsSplit() {
   const clients = [
-    { name: "Partner 1", src: "/clients/client-1.jpeg" },
-    { name: "Partner 2", src: "/clients/client-2.jpeg" },
-    { name: "Partner 3", src: "/clients/client-3.jpeg" },
-    { name: "Partner 4", src: "/clients/client-4.jpeg?v=2" },
-    { name: "Partner 5", src: "/clients/client-5.jpeg" },
-    { name: "Partner 6", src: "/clients/client-6.jpeg" },
-    { name: "Partner 7", src: "/clients/client-7.jpeg" },
-    { name: "Partner 8", src: "/clients/client-8.jpeg?v=3" },
-    { name: "Partner 9", src: "/clients/client-9.jpeg" },
-    { name: "Partner 10", src: "/clients/client-10.jpeg" },
-    { name: "Partner 11", src: "/clients/client-11.jpeg" },
-    { name: "Partner 12", src: "/clients/client-12.jpeg" },
-    { name: "Partner 13", src: "/clients/client-13.jpeg" },
-    { name: "Partner 14", src: "/clients/client-14.jpeg" }
+    { name: "NHS Health Research Authority", href: "https://www.hra.nhs.uk/", src: "/clients/client-1.jpeg" },
+    { name: "Department of Health & Social Care", href: "https://www.gov.uk/government/organisations/department-of-health-and-social-care", src: "/clients/client-2.jpeg" },
+    { name: "UK Government", href: "https://www.gov.uk/", src: "/clients/client-3.jpeg" },
+    { name: "Cabinet Office", href: "https://www.gov.uk/government/organisations/cabinet-office", src: "/clients/client-4.jpeg?v=2" },
+    { name: "Civil Service", href: "https://www.gov.uk/government/organisations/civil-service", src: "/clients/client-5.jpeg" },
+    { name: "UK Research and Innovation", href: "https://www.ukri.org/", src: "/clients/client-6.jpeg" },
+    { name: "American Express", href: "https://www.americanexpress.com/", src: "/clients/client-7.jpeg" },
+    { name: "UK Space Agency", href: "https://www.gov.uk/government/organisations/uk-space-agency", src: "/clients/client-8.jpeg?v=3" },
+    { name: "Riyad Bank", href: "https://www.riyadbank.com/", src: "/clients/client-9.jpeg" },
+    { name: "Welsh Government", href: "https://gov.wales/", src: "/clients/client-10.jpeg" },
+    { name: "UKSBS", href: "https://www.uksbs.org.uk/", src: "/clients/client-11.jpeg" },
+    { name: "NHS England", href: "https://www.england.nhs.uk/", src: "/clients/client-12.jpeg" },
+    { name: "HM Treasury", href: "https://www.gov.uk/government/organisations/hm-treasury", src: "/clients/client-13.jpeg" },
+    { name: "Goldman Sachs", href: "https://www.goldmansachs.com/", src: "/clients/client-14.jpeg" }
   ];
 
   // Split into two groups of 7
@@ -27,7 +27,7 @@ export default function ClientsSplit() {
   const track2 = [...row2, ...row2, ...row2];
 
   return (
-    <section id="clients-split" className="w-full py-20 bg-[#0a0a0c] border-t border-b border-white/5 relative z-10 overflow-hidden">
+    <section id="partnerships" className="w-full py-20 bg-[#0a0a0c] border-t border-b border-white/5 relative z-10 overflow-hidden scroll-mt-[80px]">
       
       {/* Styles for opposite scrolling and hover pause */}
       <style dangerouslySetInnerHTML={{ __html: `
@@ -76,9 +76,12 @@ export default function ClientsSplit() {
           
           <div className="marquee-container-1 gap-6 md:gap-8 pr-6">
             {track1.map((client, idx) => (
-              <div 
+              <a 
                 key={`${client.name}-r1-${idx}`} 
-                className="relative flex items-center justify-center min-w-[200px] md:min-w-[240px] h-24 md:h-28 bg-[#0a0a0c]/60 backdrop-blur-sm border-[0.5px] border-white/[0.06] rounded-2xl cursor-default group overflow-hidden transition-all duration-300 hover:scale-[1.05]"
+                href={client.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative flex items-center justify-center min-w-[200px] md:min-w-[240px] h-24 md:h-28 bg-[#0a0a0c]/60 backdrop-blur-sm border-[0.5px] border-white/[0.06] rounded-2xl cursor-pointer group overflow-hidden transition-all duration-300 hover:scale-[1.03] pointer-events-auto"
               >
                 <div 
                   className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-0" 
@@ -91,7 +94,7 @@ export default function ClientsSplit() {
                   alt={`${client.name} Logo`}
                   className="w-full h-full object-contain p-3 md:p-4 bg-white rounded-2xl relative z-10 transition-all duration-500 grayscale-0 opacity-100 filter-none group-hover:scale-[1.02]"
                 />
-              </div>
+              </a>
             ))}
           </div>
         </div>
@@ -104,9 +107,12 @@ export default function ClientsSplit() {
 
           <div className="marquee-container-2 gap-6 md:gap-8 pr-6">
             {track2.map((client, idx) => (
-              <div 
+              <a 
                 key={`${client.name}-r2-${idx}`} 
-                className="relative flex items-center justify-center min-w-[200px] md:min-w-[240px] h-24 md:h-28 bg-[#0a0a0c]/60 backdrop-blur-sm border-[0.5px] border-white/[0.06] rounded-2xl cursor-default group overflow-hidden transition-all duration-300 hover:scale-[1.05]"
+                href={client.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative flex items-center justify-center min-w-[200px] md:min-w-[240px] h-24 md:h-28 bg-[#0a0a0c]/60 backdrop-blur-sm border-[0.5px] border-white/[0.06] rounded-2xl cursor-pointer group overflow-hidden transition-all duration-300 hover:scale-[1.03] pointer-events-auto"
               >
                 <div 
                   className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-0" 
@@ -119,7 +125,7 @@ export default function ClientsSplit() {
                   alt={`${client.name} Logo`}
                   className="w-full h-full object-contain p-3 md:p-4 bg-white rounded-2xl relative z-10 transition-all duration-500 grayscale-0 opacity-100 filter-none group-hover:scale-[1.02]"
                 />
-              </div>
+              </a>
             ))}
           </div>
         </div>

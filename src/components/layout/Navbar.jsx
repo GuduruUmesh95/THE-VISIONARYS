@@ -6,9 +6,9 @@ export default function Navbar() {
 
   const navLinks = [
     { label: "Home", href: "#home" },
-    { label: "Our Process", href: "#process" },
     { label: "Solutions", href: "#solutions" },
-    { label: "Services", href: "#services" },
+    { label: "Partnership", href: "#partnerships" },
+    { label: "Our Process", href: "#process" },
     { label: "Insights", href: "#insights" },
     { label: "Contact", href: "#contact" }
   ];
@@ -99,10 +99,10 @@ export default function Navbar() {
           />
           <div className="flex flex-col text-left">
             <span 
-              className="text-white font-display font-extrabold tracking-[0.2em] text-xs uppercase leading-none text-shadow-premium"
+              className="text-white font-display font-extrabold tracking-[0.2em] text-xs leading-none text-shadow-premium"
               style={{ color: "#ffffff" }}
             >
-              THE VISIONARYS
+              The Visionarys
             </span>
             <span className="text-zinc-400 font-mono text-[7px] tracking-[0.12em] mt-1 font-bold">
               ENVISION. INNOVATE. ACHIEVE.
@@ -128,7 +128,7 @@ export default function Navbar() {
         <a 
           href="#contact" 
           onClick={(e) => handleAnchorClick(e, "#contact")}
-          className="border-[0.5px] border-white/[0.06] bg-white/[0.03] text-[#FDFBF7] px-6 py-3 rounded-lg text-sm md:text-[15px] font-semibold tracking-wide transition-all duration-300 hover:scale-[1.03] hover:bg-white hover:text-[#0a0a0c] text-shadow-premium pointer-events-auto"
+          className="text-sm font-semibold border border-[#FFB84D]/40 text-[#FFB84D] bg-[#FFB84D]/5 px-5 py-2.5 rounded-lg transition-all duration-300 hover:bg-[#FFB84D] hover:text-[#0a0a0c] hover:border-[#FFB84D] hover:shadow-[0_0_20px_rgba(255,184,77,0.3)] hover:scale-[1.03] text-shadow-premium pointer-events-auto"
         >
           Get in Touch
         </a>
