@@ -74,13 +74,13 @@ export default function Navbar() {
           : '-translate-y-full opacity-0 pointer-events-none'
       }`}
     >
-      <div className="h-14 md:h-16 w-full flex items-center justify-between px-6 md:px-12 text-base md:text-lg font-medium tracking-tight">
+      <div className="h-14 md:h-16 w-full flex items-center justify-between px-4 sm:px-6 md:px-12 text-base md:text-lg font-medium tracking-tight">
         
         {/* Logo */}
         <a 
           href="#home" 
           onClick={(e) => handleAnchorClick(e, "#home")}
-          className="flex items-center gap-3 group pointer-events-auto"
+          className="flex items-center gap-2 sm:gap-3 group pointer-events-auto"
         >
           <img 
             src="/logo-new.png" 
@@ -89,11 +89,11 @@ export default function Navbar() {
           />
           <div className="flex flex-col text-left">
             <span 
-              className="text-white font-display font-semibold tracking-wide text-lg md:text-xl leading-none"
+              className="text-white font-display font-semibold tracking-wide text-base sm:text-lg md:text-xl leading-none"
             >
               The Visionarys
             </span>
-            <span className="text-zinc-400 font-mono text-[7px] tracking-[0.12em] mt-1 font-bold">
+            <span className="hidden xs:block text-zinc-400 font-mono text-[7px] tracking-[0.12em] mt-1 font-bold">
               ENVISION. INNOVATE. ACHIEVE.
             </span>
           </div>
@@ -117,7 +117,7 @@ export default function Navbar() {
         <a 
           href="#contact" 
           onClick={(e) => handleAnchorClick(e, "#contact")}
-          className="text-sm font-medium tracking-wide border border-[#FFB84D]/40 text-[#FFB84D] bg-[#FFB84D]/5 px-5 py-2.5 rounded-lg transition-all duration-300 hover:bg-[#FFB84D]/10 hover:border-[#FFB84D] hover:shadow-[0_0_15px_rgba(255,184,77,0.25)] hover:scale-[1.02] active:scale-[0.98] text-shadow-premium pointer-events-auto"
+          className="text-xs sm:text-sm font-medium tracking-wide border border-[#FFB84D]/40 text-[#FFB84D] bg-[#FFB84D]/5 px-3 py-1.5 sm:px-5 sm:py-2.5 rounded-lg transition-all duration-300 hover:bg-[#FFB84D]/10 hover:border-[#FFB84D] hover:shadow-[0_0_15px_rgba(255,184,77,0.25)] hover:scale-[1.02] active:scale-[0.98] text-shadow-premium pointer-events-auto"
         >
           Get in Touch
         </a>

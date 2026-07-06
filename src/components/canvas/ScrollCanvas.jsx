@@ -110,28 +110,63 @@ export default function ScrollCanvas({ scrollProgressRef }) {
         const canvasRatio = canvasWidth / canvasHeight;
 
         let drawWidth, drawHeight, drawX, drawY;
+        const isMobile = canvasWidth < 768;
 
-        // Aspect ratio cover calculations (perfect crop fill)
-        if (canvasRatio > imgRatio) {
-          drawWidth = canvasWidth;
-          drawHeight = canvasWidth / imgRatio;
-          drawX = 0;
+        if (isMobile) {
+          // Contain scaling: fit the whole image inside the mobile viewport without cropping
+          if (canvasRatio > imgRatio) {
+            drawHeight = canvasHeight;
+            drawWidth = canvasHeight * imgRatio;
+          } else {
+            drawWidth = canvasWidth;
+            drawHeight = canvasWidth / imgRatio;
+          }
+          drawX = (canvasWidth - drawWidth) / 2;
           drawY = (canvasHeight - drawHeight) / 2;
         } else {
-          drawWidth = canvasHeight * imgRatio;
-          drawHeight = canvasHeight;
-          drawX = (canvasWidth - drawWidth) / 2;
-          drawY = 0;
+          // Cover scaling (original desktop crop-to-fill)
+          if (canvasRatio > imgRatio) {
+            drawWidth = canvasWidth;
+            drawHeight = canvasWidth / imgRatio;
+            drawX = 0;
+            drawY = (canvasHeight - drawHeight) / 2;
+          } else {
+            drawWidth = canvasHeight * imgRatio;
+            drawHeight = canvasHeight;
+            drawX = (canvasWidth - drawWidth) / 2;
+            drawY = 0;
+          }
         }
 
-        // Apply a scale factor of 0.85 so the cube structure doesn't dominate page text
-        const scaleFactor = 0.85;
+        // Apply a scale factor of 1.0 on mobile to fill width, and 0.85 on desktop
+        const scaleFactor = isMobile ? 1.0 : 0.85;
         const finalWidth = drawWidth * scaleFactor;
         const finalHeight = drawHeight * scaleFactor;
         const finalX = drawX + (drawWidth - finalWidth) / 2;
         const finalY = drawY + (drawHeight - finalHeight) / 2;
 
         ctx.drawImage(img, finalX, finalY, finalWidth, finalHeight);
+
+        if (isMobile) {
+          // Smooth vertical blend gradients to fade the video boundaries into the solid black canvas
+          // Top edge fade
+          const topGrad = ctx.createLinearGradient(0, finalY, 0, finalY + 80);
+          if (topGrad) {
+            topGrad.addColorStop(0, "#0a0a0c");
+            topGrad.addColorStop(1, "rgba(10, 10, 12, 0)");
+            ctx.fillStyle = topGrad;
+            ctx.fillRect(0, finalY - 2, rect.width, 84);
+          }
+
+          // Bottom edge fade
+          const bottomGrad = ctx.createLinearGradient(0, finalY + finalHeight - 80, 0, finalY + finalHeight);
+          if (bottomGrad) {
+            bottomGrad.addColorStop(0, "rgba(10, 10, 12, 0)");
+            bottomGrad.addColorStop(1, "#0a0a0c");
+            ctx.fillStyle = bottomGrad;
+            ctx.fillRect(0, finalY + finalHeight - 82, rect.width, 84);
+          }
+        }
       }
 
       // 3. Subtle pulsing gold circuit glow overlay (active as user reaches 'Our Clients')
