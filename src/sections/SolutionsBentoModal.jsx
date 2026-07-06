@@ -245,7 +245,7 @@ export default function SolutionsBentoModal() {
   };
 
   return (
-    <section id="option3" className="w-full pt-24 md:pt-36 pb-6 md:pb-8 bg-transparent relative z-10 scroll-mt-[80px]">
+    <section id="solutions" className="w-full pt-24 md:pt-36 pb-6 md:pb-8 bg-transparent relative z-10 scroll-mt-[80px]">
       <style>{`
         .solutions-track {
           --card-width: 100%;
@@ -262,8 +262,8 @@ export default function SolutionsBentoModal() {
       <div className="max-w-[85vw] xl:max-w-[80vw] mx-auto px-4 relative">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
           <div className="max-w-2xl">
-            <span className="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 text-[10px] font-mono font-bold tracking-[0.3em] uppercase block mb-3 w-max">
-              Option 3: Full-Screen Modal
+            <span className="text-[10px] font-mono tracking-[0.3em] uppercase block mb-3 font-bold text-[#FFB84D]">
+              Core Capabilities
             </span>
             <h2 className="text-center text-4xl md:text-5xl lg:text-6xl font-sans font-bold text-transparent bg-clip-text bg-gradient-to-br from-white to-white/40 tracking-tight leading-tight ">
               Consultancy Solutions

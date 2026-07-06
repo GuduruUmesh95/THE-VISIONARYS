@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
 
 export default function Navbar() {
-  const [visible, setVisible] = useState(true);
-  const timerRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(true);
+  const [isAtTop, setIsAtTop] = useState(true);
+  const timeoutRef = useRef(null);
 
   const navLinks = [
     { label: "Home", href: "#home" },
@@ -13,55 +14,42 @@ export default function Navbar() {
     { label: "Contact", href: "#contact" }
   ];
 
-  const resetTimer = () => {
-    setVisible(true);
-    if (timerRef.current) {
-      clearTimeout(timerRef.current);
+  const resetHideTimer = () => {
+    setIsVisible(true);
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
     }
-    
-    // While scroll position is inside the pinned HeroSection (2400px scroll zone), navbar MUST remain 100% visible
-    if (window.scrollY < 2400) {
-      return;
+    // Only auto-hide after 4 seconds if we are scrolled down away from the top header
+    if (window.scrollY > 60) {
+      timeoutRef.current = setTimeout(() => {
+        setIsVisible(false);
+      }, 4000); // 4 seconds visibility duration
     }
-
-    timerRef.current = setTimeout(() => {
-      setVisible(false);
-    }, 3000);
   };
 
   useEffect(() => {
-    resetTimer();
-
-    const handleActivity = () => {
-      resetTimer();
+    const handleScroll = () => {
+      const scrolledDown = window.scrollY > 60;
+      setIsAtTop(!scrolledDown);
+      resetHideTimer();
     };
 
-    const handleScrollCheck = () => {
-      if (window.scrollY < 2400) {
-        setVisible(true);
-        if (timerRef.current) {
-          clearTimeout(timerRef.current);
-        }
-      } else {
-        resetTimer();
-      }
+    const handleMouseMove = () => {
+      resetHideTimer();
     };
 
-    window.addEventListener("mousemove", handleActivity);
-    window.addEventListener("scroll", handleScrollCheck);
-    window.addEventListener("touchstart", handleActivity);
-    window.addEventListener("keydown", handleActivity);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('mousemove', handleMouseMove, { passive: true });
+
+    // Initial active trigger
+    resetHideTimer();
 
     return () => {
-      if (timerRef.current) {
-        clearTimeout(timerRef.current);
-      }
-      window.removeEventListener("mousemove", handleActivity);
-      window.removeEventListener("scroll", handleScrollCheck);
-      window.removeEventListener("touchstart", handleActivity);
-      window.removeEventListener("keydown", handleActivity);
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('mousemove', handleMouseMove);
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
     };
-  }, []);
+  }, [isAtTop]);
 
   const handleAnchorClick = (e, href) => {
     if (href.startsWith("#")) {
@@ -80,8 +68,10 @@ export default function Navbar() {
 
   return (
     <header 
-      className={`fixed top-0 left-0 w-full z-[100] backdrop-blur-md bg-[#0a0a0c]/40 border-b border-white/5 hero-nav-global ${
-        visible ? "transition-none opacity-100" : "transition-opacity duration-500 ease-out opacity-0 pointer-events-none"
+      className={`fixed top-0 left-0 w-full z-[100] backdrop-blur-md bg-[#0a0a0c]/40 border-b border-white/5 transition-all duration-500 ease-in-out transform ${
+        isVisible || isAtTop 
+          ? 'translate-y-0 opacity-100' 
+          : '-translate-y-full opacity-0 pointer-events-none'
       }`}
     >
       <div className="h-14 md:h-16 w-full flex items-center justify-between px-6 md:px-12 text-base md:text-lg font-medium tracking-tight">

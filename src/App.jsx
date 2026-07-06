@@ -3,7 +3,6 @@ import ScrollCanvas from "./components/canvas/ScrollCanvas";
 import Navbar from "./components/layout/Navbar";
 import HeroSection from "./sections/HeroSection";
 import ClientsSplit from "./sections/ClientsSplit";
-import SolutionsBentoDrawer from "./sections/SolutionsBentoDrawer";
 import SolutionsBentoModal from "./sections/SolutionsBentoModal";
 import RecognitionBento from "./sections/RecognitionBento";
 import ProcessTimeline from "./sections/ProcessTimeline";
@@ -28,7 +27,6 @@ export default function App() {
   useEffect(() => {
     // STAGE 1: Contrast mask starts hidden, Navbar is persistent at 1.0 opacity
     gsap.set(".bg-contrast-mask", { opacity: 0 });
-    gsap.set(".hero-nav-global", { y: 0, opacity: 1.0 });
 
     // THE VEIL GRADIENT FADE (Starts immediately, completes in 1.5s)
     gsap.to(".bg-contrast-mask", { opacity: 1, duration: 1.5, ease: "power1.inOut" });
@@ -171,12 +169,7 @@ export default function App() {
 
         {/* Main content sections without opaque background classes */}
         <main className="relative w-full bg-transparent">
-          
-          {/* --- OPTIONS FOR REVIEW --- */}
-          <SolutionsBentoDrawer />
           <SolutionsBentoModal />
-          {/* ------------------------- */}
-          {/* ------------------------- */}
 
           {/* 3. Clients/Trust Marquee */}
           <div id="careers">
