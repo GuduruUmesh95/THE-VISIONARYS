@@ -83,7 +83,7 @@ export default function Navbar() {
           className="flex items-center gap-2 sm:gap-3 group pointer-events-auto"
         >
           <img 
-            src="/logo-new.png" 
+            src="/assets/logos/logo-new.png" 
             alt="The Visionarys Logo" 
             className="w-8 h-8 object-contain group-hover:scale-[1.03] transition-transform duration-300"
           />

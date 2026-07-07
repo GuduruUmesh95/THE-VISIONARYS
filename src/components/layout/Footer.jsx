@@ -34,7 +34,7 @@ export default function Footer() {
               className="flex items-center gap-3 group"
             >
               <img 
-                src="/logo-new.png" 
+                src="/assets/logos/logo-new.png" 
                 alt="The Visionarys Logo" 
                 className="w-10 h-10 object-contain group-hover:scale-[1.03] transition-transform duration-300"
               />

@@ -14,14 +14,14 @@ export default function RecognitionBento() {
       source: "Global 100 - 2026",
       desc: "Best Management Consulting Business of the Year 2026 in United Kingdom.",
       href: "https://www.gpmg.uk/winners/global-100-2026",
-      logo: "/award-global100.png"
+      logo: "/assets/awards/award-1.png"
     },
     {
       id: "matoday",
       source: "M&A Today Global Awards - 2026",
       desc: "Best Management Consulting Business of the Year 2026 in United Kingdom.",
       href: "https://www.mna-today.co.uk/winners/global-awards-2026",
-      logo: "/award-matoday.png"
+      logo: "/assets/awards/award-2.png"
     }
   ];
 

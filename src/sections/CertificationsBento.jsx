@@ -10,7 +10,7 @@ export default function CertificationsBento() {
       badge: (
         <div className="relative w-20 h-20 flex items-center justify-center">
           <img
-            src="/certificate%201.avif"
+            src="/assets/certificates/certificate-1.avif"
             alt="GDPR Compliant Badge"
             className="w-full h-full object-contain filter brightness-[1.1]"
           />
@@ -26,7 +26,7 @@ export default function CertificationsBento() {
       badge: (
         <div className="relative w-20 h-20 flex items-center justify-center">
           <img
-            src="/certificate%202.avif"
+            src="/assets/certificates/certificate-2.avif"
             alt="Cyber Essentials Certified Badge"
             className="w-full h-full object-contain"
           />
@@ -42,7 +42,7 @@ export default function CertificationsBento() {
       badge: (
         <div className="relative w-20 h-20 flex items-center justify-center">
           <img
-            src="/certificate%203.avif"
+            src="/assets/certificates/certificate-3.avif"
             alt="Cyber Essentials Plus Certified Badge"
             className="w-full h-full object-contain"
           />

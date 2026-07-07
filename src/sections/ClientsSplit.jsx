@@ -2,20 +2,20 @@ import React from "react";
 
 export default function ClientsSplit() {
   const clients = [
-    { name: "NHS Health Research Authority", href: "https://www.hra.nhs.uk/", src: "/clients/client-1.jpeg" },
-    { name: "Department of Health & Social Care", href: "https://www.gov.uk/government/organisations/department-of-health-and-social-care", src: "/clients/client-2.jpeg" },
-    { name: "UK Government", href: "https://www.gov.uk/", src: "/clients/client-3.jpeg" },
-    { name: "Cabinet Office", href: "https://www.gov.uk/government/organisations/cabinet-office", src: "/clients/client-4.jpeg?v=2" },
-    { name: "Civil Service", href: "https://www.gov.uk/government/organisations/civil-service", src: "/clients/client-5.jpeg" },
-    { name: "UK Research and Innovation", href: "https://www.ukri.org/", src: "/clients/client-6.jpeg" },
-    { name: "American Express", href: "https://www.americanexpress.com/", src: "/clients/client-7.jpeg" },
-    { name: "UK Space Agency", href: "https://www.gov.uk/government/organisations/uk-space-agency", src: "/clients/client-8.jpeg?v=3" },
-    { name: "Riyad Bank", href: "https://www.riyadbank.com/", src: "/clients/client-9.jpeg" },
-    { name: "Welsh Government", href: "https://gov.wales/", src: "/clients/client-10.jpeg" },
-    { name: "UKSBS", href: "https://www.uksbs.org.uk/", src: "/clients/client-11.jpeg" },
-    { name: "NHS England", href: "https://www.england.nhs.uk/", src: "/clients/client-12.jpeg" },
-    { name: "HM Treasury", href: "https://www.gov.uk/government/organisations/hm-treasury", src: "/clients/client-13.jpeg" },
-    { name: "Goldman Sachs", href: "https://www.goldmansachs.com/", src: "/clients/client-14.jpeg" }
+    { name: "NHS Health Research Authority", href: "https://www.hra.nhs.uk/", src: "/assets/clients/client-1.jpeg" },
+    { name: "Department of Health & Social Care", href: "https://www.gov.uk/government/organisations/department-of-health-and-social-care", src: "/assets/clients/client-2.jpeg" },
+    { name: "UK Government", href: "https://www.gov.uk/", src: "/assets/clients/client-3.jpeg" },
+    { name: "Cabinet Office", href: "https://www.gov.uk/government/organisations/cabinet-office", src: "/assets/clients/client-4.jpeg?v=2" },
+    { name: "Civil Service", href: "https://www.gov.uk/government/organisations/civil-service", src: "/assets/clients/client-5.jpeg" },
+    { name: "UK Research and Innovation", href: "https://www.ukri.org/", src: "/assets/clients/client-6.jpeg" },
+    { name: "American Express", href: "https://www.americanexpress.com/", src: "/assets/clients/client-7.jpeg" },
+    { name: "UK Space Agency", href: "https://www.gov.uk/government/organisations/uk-space-agency", src: "/assets/clients/client-8.jpeg?v=3" },
+    { name: "Riyad Bank", href: "https://www.riyadbank.com/", src: "/assets/clients/client-9.jpeg" },
+    { name: "Welsh Government", href: "https://gov.wales/", src: "/assets/clients/client-10.jpeg" },
+    { name: "UKSBS", href: "https://www.uksbs.org.uk/", src: "/assets/clients/client-11.jpeg" },
+    { name: "NHS England", href: "https://www.england.nhs.uk/", src: "/assets/clients/client-12.jpeg" },
+    { name: "HM Treasury", href: "https://www.gov.uk/government/organisations/hm-treasury", src: "/assets/clients/client-13.jpeg" },
+    { name: "Goldman Sachs", href: "https://www.goldmansachs.com/", src: "/assets/clients/client-14.jpeg" }
   ];
 
   // Split into two groups of 7

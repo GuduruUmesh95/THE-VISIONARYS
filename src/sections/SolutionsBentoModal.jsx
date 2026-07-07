@@ -14,7 +14,7 @@ export default function SolutionsBentoModal() {
       desc: "Architecting agentic workflows and intelligent systems. We integrate advanced AI consulting and automated operations directly into core enterprise pipelines, enhancing efficiency and scaling decision-making intelligence.",
       icon: Cpu,
       accent: "#FFB84D",
-      imgSrc: "/solutions_ai.png",
+      imgSrc: "/assets/solutions/solution-1.png",
       features: ["Agentic Workflows", "Generative AI Integration", "RPA Solutions", "Cognitive Automation"],
       bgVisual: (
         <svg className="absolute inset-0 w-full h-full opacity-[0.06] group-hover:opacity-[0.14] transition-opacity duration-500 pointer-events-none" xmlns="http://www.w3.org/2000/svg">
@@ -45,7 +45,7 @@ export default function SolutionsBentoModal() {
       desc: "Deep vertical expertise tailored for regulated environments, risk management, compliance pipelines, and core modernizations for legacy banking infrastructures.",
       icon: Landmark,
       accent: "#E6A13B",
-      imgSrc: "/solutions_finance.png",
+      imgSrc: "/assets/solutions/solution-2.png",
       features: ["Risk Management Models", "Regulatory Compliance", "Legacy Modernization", "FinTech Integration"],
       bgVisual: (
         <svg className="absolute inset-0 w-full h-full opacity-[0.06] group-hover:opacity-[0.12] transition-opacity duration-500 pointer-events-none" xmlns="http://www.w3.org/2000/svg">
@@ -75,7 +75,7 @@ export default function SolutionsBentoModal() {
       desc: "Cyber Essentials Plus certified. Offering rigorous threat intelligence, round-the-clock vulnerability assessments, and robust identity access management architectures.",
       icon: ShieldCheck,
       accent: "#FFB84D",
-      imgSrc: "/solutions_cyber.png",
+      imgSrc: "/assets/solutions/solution-3.png",
       features: ["Zero-Trust Architecture", "Threat Intelligence", "Vulnerability Audits", "IAM Optimization"],
       bgVisual: (
         <svg className="absolute inset-0 w-full h-full opacity-[0.06] group-hover:opacity-[0.12] transition-opacity duration-500 pointer-events-none" xmlns="http://www.w3.org/2000/svg">
@@ -103,7 +103,7 @@ export default function SolutionsBentoModal() {
       desc: "Scaling containerized infrastructures, modern CI/CD orchestration pipelines, cloud-native deployments, and serverless architectures tailored for hyper-availability and compliance.",
       icon: Cloud,
       accent: "#E6A13B",
-      imgSrc: "/solutions_devops.png",
+      imgSrc: "/assets/solutions/solution-4.png",
       features: ["CI/CD Orchestration", "Cloud-Native Deployments", "Containerization", "High-Availability Arch"],
       bgVisual: (
         <svg className="absolute inset-0 w-full h-full opacity-[0.06] group-hover:opacity-[0.14] transition-opacity duration-500 pointer-events-none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300">
